@@ -22,7 +22,7 @@ public class SwitchPreference {
     
     public Context mContext;
     
-    public int colorBackground = Color.parseColor("#242424");
+    public int colorBackground = Color.parseColor("#FFFFFF");
     
     public SwitchPreference (Context ctx, LinearLayout root) {
         mContext = ctx;

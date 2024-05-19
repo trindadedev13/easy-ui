@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.view.LayoutInflater; 
 
 import androidx.appcompat.app.AlertDialog;
 
@@ -31,7 +32,7 @@ public class InputPreference {
     public AlertDialog dialog;
     public Button positiveButton , negativeButton;
     
-    public int colorBackground = Color.parseColor("#242424");
+    public int colorBackground = Color.parseColor("#FFFFFF");
     
     public InputPreference (Context ctx, LinearLayout root) {
         mContext = ctx;
@@ -86,29 +87,32 @@ public class InputPreference {
     }
     
     public void inputDialog(String title, String message, String hint, String defaultVal, View.OnClickListener listenerButtonOK, View.OnClickListener listenerButtonCancel){
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-        View dialogView = inflater.inflate(R.layout.dialog_input_layout, null);
-        EditText inputText = dialogView.findViewById(R.id.inputText);
-        inputText.setHint(hint);
-        inputText.setText(defaultVal);
-        dialog = new MaterialAlertDialogBuilder(mContext)
-            .setView(dialogBinding.getRoot())
-            .setTitle(title).setMessage(message)
-            .setNegativeButton(NEGATIVE_BUTTON_TEXT, null)
-            .setPositiveButton(POSITIVE_BUTTON_TEXT, null).create();
-        
-        dialog.setOnShowListener(dialogInterface -> {
-            positiveButton = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
-            negativeButton = dialog.getButton(DialogInterface.BUTTON_NEGATIVE);
+       LayoutInflater inflater = LayoutInflater.from(mContext);
+       View dialogView = inflater.inflate(R.layout.dialog_input_layout, null);
+       EditText inputText = dialogView.findViewById(R.id.inputText);
+       inputText.setHint(hint);
+       inputText.setText(defaultVal);
 
-            positiveButton.setOnClickListener(listenerButtonOK);
-            negativeButton.setOnClickListener(listenerButtonCancel);
+      dialog = new MaterialAlertDialogBuilder(mContext)
+          .setView(dialogView)
+          .setTitle(title)
+          .setMessage(message)
+          .setNegativeButton(NEGATIVE_BUTTON_TEXT, null)
+          .setPositiveButton(POSITIVE_BUTTON_TEXT, null)
+          .create();
 
-            dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
-            inputText.requestFocus();
-        });
+      dialog.setOnShowListener(dialogInterface -> {
+          Button positiveButton = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
+          Button negativeButton = dialog.getButton(DialogInterface.BUTTON_NEGATIVE);
 
-        dialog.show();
+          positiveButton.setOnClickListener(listenerButtonOK);
+          negativeButton.setOnClickListener(listenerButtonCancel);
+
+          dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+          inputText.requestFocus();
+      });
+
+      dialog.show();
     }
     
     public String getDataTyped(){

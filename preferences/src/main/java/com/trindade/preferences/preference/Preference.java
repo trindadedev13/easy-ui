@@ -15,7 +15,7 @@ public class Preference {
     public TextView titleView, subtitleView;
     public Context mContext;
     
-    public int colorBackground = Color.parseColor("#242424");
+    public int colorBackground = Color.parseColor("#FFFFFF");
     
     public Preference (Context ctx, LinearLayout root) {
         mContext = ctx;

@@ -22,7 +22,7 @@ public class MaterialSwitchPreference {
     
     public Context mContext;
     
-    public int colorBackground = Color.parseColor("#242424");
+    public int colorBackground = Color.parseColor("#FFFFFF");
     
     public MaterialSwitchPreference (Context ctx, LinearLayout root) {
         mContext = ctx;
