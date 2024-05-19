@@ -31,5 +31,7 @@
             format="string"/>
 
     </declare-styleable>
+    
     <attr name="colorBackground" format="color" />
+    <attr name="colorPrimary" format="color" />
 </resources>
