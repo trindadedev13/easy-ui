@@ -14,6 +14,7 @@ dependencyResolutionManagement {
   }
 }
 
-rootProject.name = "trindade-preferences"
+rootProject.name = "trindade"
 
-include(":app")
+include(":views")
+include(":preferences")

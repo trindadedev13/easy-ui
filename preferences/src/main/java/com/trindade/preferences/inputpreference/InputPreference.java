@@ -17,7 +17,6 @@ import androidx.appcompat.app.AlertDialog;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import com.trindade.R;
-import com.trindade.databinding.DialogInputLayoutBinding;
 import com.trindade.preferences.PreferencesUtil; 
 
 public class InputPreference {
@@ -28,7 +27,6 @@ public class InputPreference {
     public String POSITIVE_BUTTON_TEXT, NEGATIVE_BUTTON_TEXT;
     public String typedVal;
     
-    public DialogInputLayoutBinding dialogBinding;
     public EditText inputText;
     public AlertDialog dialog;
     public Button positiveButton , negativeButton;
@@ -88,8 +86,9 @@ public class InputPreference {
     }
     
     public void inputDialog(String title, String message, String hint, String defaultVal, View.OnClickListener listenerButtonOK, View.OnClickListener listenerButtonCancel){
-        dialogBinding = DialogInputLayoutBinding.inflate(((Activity)mContext).getLayoutInflater());
-        inputText = dialogBinding.inputText;
+        LayoutInflater inflater = LayoutInflater.from(mContext);
+        View dialogView = inflater.inflate(R.layout.dialog_input_layout, null);
+        EditText inputText = dialogView.findViewById(R.id.inputText);
         inputText.setHint(hint);
         inputText.setText(defaultVal);
         dialog = new MaterialAlertDialogBuilder(mContext)
