@@ -8,15 +8,15 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.google.android.material.switchmaterial.SwitchMaterial;
+import com.google.android.material.materialswitch.MaterialSwitch;
 
 import com.trindade.preferences.PreferencesUtil;
 
-public class SwitchPreference {
+public class MaterialSwitchPreference {
     
     public LinearLayout root, preferenceRoot, textContainer, switchContainer;
     public TextView titleView, subtitleView;
-    public SwitchMaterial switchView;
+    public MaterialSwitch switchView;
     
     public LinearLayout.LayoutParams preferenceRootParams;
     
@@ -24,7 +24,7 @@ public class SwitchPreference {
     
     public int colorBackground = Color.parseColor("#242424");
     
-    public SwitchPreference (Context ctx, LinearLayout root) {
+    public MaterialSwitchPreference (Context ctx, LinearLayout root) {
         mContext = ctx;
         this.root = root;
     } 
@@ -86,7 +86,7 @@ public class SwitchPreference {
     }
     
     private void createSwitch(CompoundButton.OnCheckedChangeListener listener, View.OnClickListener listener_2){
-        switchView = new SwitchMaterial(mContext);
+        switchView = new MaterialSwitch(mContext);
         switchView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         switchView.setPadding(8, 8, 8, 8);
         switchView.setTextSize(12);
