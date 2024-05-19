@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.google.android.material.switchmaterial.SwitchMaterial;
+import com.trindade.view.TrindadeSwitch;
 
 import com.trindade.preferences.PreferencesUtil;
 

@@ -1,4 +1,4 @@
-package com.trindade.preferences.switchpreference;
+package com.trindade.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -27,7 +27,6 @@ public class TrindadeSwitch extends SwitchCompat {
         setPadding(8, 8, 8, 8);
         setText("Switch");
         setTextSize(16);
-        setTextColor(context.getResources().getColor(R.color.colorOnSurfaceVariant));
         setThumbDrawable(context.getResources().getDrawable(R.drawable.ui_m3_switch_thumb));
         setTrackDrawable(context.getResources().getDrawable(R.drawable.ui_m3_switch_track));
         setTrackTintList(context.getResources().getColorStateList(R.color.sel_m3_switch_track));
