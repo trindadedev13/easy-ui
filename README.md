@@ -12,7 +12,7 @@
  implementation("com.github.aquilesTrindade:trindade-util:views:1.0.0")
 ```
 
-# Views
+# File-Picker
 
 ```kotlin
  implementation("com.github.aquilesTrindade:trindade-util:filepicker:1.0.0")
