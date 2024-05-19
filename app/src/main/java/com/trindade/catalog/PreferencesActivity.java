@@ -93,7 +93,7 @@ public class PreferencesActivity extends AppCompatActivity {
     }
 
     public void setDefaultBackgroundColor(Context context) {
-        DEFAULT_BACKGROUND_COLOR = getColorFromStyle(context, R.style.AppTheme, R.attr.colorBackground);
+        DEFAULT_BACKGROUND_COLOR = Color.parseColor("#FFFFFF");
     }
     
 }
