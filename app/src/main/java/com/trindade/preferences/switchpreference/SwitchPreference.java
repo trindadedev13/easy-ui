@@ -16,7 +16,7 @@ public class SwitchPreference {
     
     public LinearLayout root, preferenceRoot, textContainer, switchContainer;
     public TextView titleView, subtitleView;
-    public SwitchMaterial switchView;
+    public TrindadeSwitch switchView;
     
     public LinearLayout.LayoutParams preferenceRootParams;
     
@@ -86,7 +86,7 @@ public class SwitchPreference {
     }
     
     private void createSwitch(CompoundButton.OnCheckedChangeListener listener, View.OnClickListener listener_2){
-        switchView = new SwitchMaterial(mContext);
+        switchView = new TrindadeSwitch(mContext);
         switchView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         switchView.setPadding(8, 8, 8, 8);
         switchView.setTextSize(12);
