@@ -9,7 +9,7 @@ import android.preference.Preference;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.sketchware.remod.R;
+import com.trindade.R;
 import com.trindade.filepicker.controller.DialogSelectionListener;
 import com.trindade.filepicker.model.DialogConfigs;
 import com.trindade.filepicker.model.DialogProperties;

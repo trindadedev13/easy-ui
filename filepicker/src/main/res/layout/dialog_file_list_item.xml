@@ -54,7 +54,7 @@
             style="?android:attr/textViewStyle"/>
     </LinearLayout>
 
-    <com.github.angads25.filepicker.widget.MaterialCheckbox
+    <com.trindade.filepicker.widget.MaterialCheckbox
         android:id="@+id/file_mark"
         android:layout_width="@dimen/checkbox_dimens"
         android:layout_height="@dimen/checkbox_dimens"

@@ -21,7 +21,6 @@ public class MaterialCheckbox extends View {
     private boolean checked;
     private OnCheckedChangeListener onCheckedChangeListener;
     private Path tick;
-    private AppTheme appThemeHelper; 
     
     public MaterialCheckbox(Context context) {
         super(context);

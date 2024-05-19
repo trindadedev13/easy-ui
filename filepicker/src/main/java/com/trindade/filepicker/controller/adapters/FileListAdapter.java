@@ -32,7 +32,6 @@ public class FileListAdapter extends BaseAdapter{
     private Context context;
     private DialogProperties properties;
     private NotifyItemChecked notifyItemChecked;
-    private AppTheme appThemeHelper; 
     
     public FileListAdapter(ArrayList<FileListItem> listItem, Context context, DialogProperties properties) {
         this.listItem = listItem;
