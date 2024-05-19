@@ -1,4 +1,5 @@
 <resources>
     <color name="color_primary">#2196f3</color>    
     <color name="color_background">#FFFFFF</color>    
+    <color name="color_transparent">#00000000</color>
 </resources>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView 
+<androidx.cardview.widget.CardView 
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:focusable="false"
-    app:cardCornerRadius="20dp"
-    app:rippleColor="#000000"
+    app:cardCornerRadius="10dp"
     app:cardElevation="0dp"
     android:layout_width="match_parent"
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp"
+    app:cardBackgroundColor="@color/color_transparent"
     android:layout_height="wrap_content">
     
     <LinearLayout
@@ -61,4 +61,4 @@
         android:layout_marginEnd="@dimen/checkbox_margin"
         android:layout_marginRight="@dimen/checkbox_margin"/>
   </LinearLayout>      
-</com.google.android.material.card.MaterialCardView>
+</androidx.cardview.widget.CardView>
