@@ -1,1 +1,14 @@
 # Trindade Utils Library 
+
+# Preferences
+
+```kotlin
+ implementation("com.github.aquilesTrindade:trindade-util:preferences:1.0.0")
+```
+
+# Views
+
+```kotlin
+ implementation("com.github.aquilesTrindade:trindade-util:views:1.0.0")
+```
+

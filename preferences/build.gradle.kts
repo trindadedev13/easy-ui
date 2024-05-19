@@ -59,7 +59,7 @@ publishing {
     publications {
         register<MavenPublication>("release") {
             groupId = "com.github.aquilestrindade"
-            artifactId = "trindadePreferences"
+            artifactId = "preferences"
             version = "1.0.0"
 
             afterEvaluate {
