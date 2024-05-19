@@ -1,5 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-   <style name="AppTheme" parent="Theme.Material3.Light" />
+   <style name="AppTheme" parent="Theme.Material3.Light" >
+       <item name="colorPrimary">@color/color_primary</item>
+       <item name="colorBackground">@color/color_background</item>
+   </style>
    
    <style name="DialogAnimation">
        <item name="android:windowEnterAnimation">@anim/m3_motion_fade_enter</item>

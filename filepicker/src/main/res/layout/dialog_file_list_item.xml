@@ -5,7 +5,6 @@
     android:focusable="false"
     app:cardCornerRadius="20dp"
     app:rippleColor="#000000"
-    style="?attr/materialCardViewFilledStyle"
     app:cardElevation="0dp"
     android:layout_width="match_parent"
     android:layout_marginLeft="8dp"
