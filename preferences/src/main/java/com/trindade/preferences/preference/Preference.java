@@ -37,7 +37,7 @@ public class Preference {
         preferenceRoot.setLayoutParams(preferenceRootParams);
         preferenceRoot.setBackgroundColor(colorBackground);
         preferenceRoot.setOrientation(LinearLayout.HORIZONTAL);
-        preferenceRoot.setPadding(4, 4, 4, 4);
+        preferenceRoot.setPadding(10, 10, 10, 10);
         preferenceRoot.setBaselineAligned(false);
         PreferencesUtil.cardStyle(preferenceRoot, mContext, colorBackground);
         root.addView(preferenceRoot);

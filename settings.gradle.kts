@@ -18,3 +18,4 @@ rootProject.name = "trindade"
 
 include(":views")
 include(":preferences")
+include(":filepicker")
