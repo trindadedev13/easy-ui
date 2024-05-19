@@ -1,0 +1,31 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    
+    <style name="TextInputLayoutStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="android:paddingHorizontal">0dp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:bottomLeftRadius">14dp</item>
+        <item name="android:bottomRightRadius">14dp</item>
+        <item name="android:topLeftRadius">14dp</item>
+        <item name="android:topRightRadius">14dp</item>
+        <item name="hintEnabled">true</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Trindade.TextInputLayout.Rounded</item>
+    </style>
+
+    <style name="InLayoutTextInputLayoutStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="android:paddingHorizontal">0dp</item>
+        <item name="boxStrokeColor">@color/input_layout_selector</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:bottomLeftRadius">14dp</item>
+        <item name="android:bottomRightRadius">14dp</item>
+        <item name="android:topLeftRadius">14dp</item>
+        <item name="android:topRightRadius">14dp</item>
+        <item name="hintEnabled">true</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Trindade.TextInputLayout.Rounded</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.Trindade.TextInputLayout.Rounded" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/inputfields_corners_radius</item>
+    </style>
+    
+</resources>
