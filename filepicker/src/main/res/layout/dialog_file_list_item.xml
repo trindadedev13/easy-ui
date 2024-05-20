@@ -43,7 +43,7 @@
             android:id="@+id/fname"
             android:textStyle="bold"
             android:textSize="16sp"
-            andeoid:textColor="?attr/colorPrimary"
+            android:textColor="?attr/colorPrimary"
             />
 
         <TextView
