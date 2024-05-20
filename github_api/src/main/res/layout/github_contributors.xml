@@ -18,7 +18,7 @@
         <com.google.android.material.appbar.MaterialToolbar
              android:layout_height="?attr/actionBarSize"
              android:layout_width="match_parent"
-             app:title="@string/github_contributors"
+             app:title="Contributors"
              app:popupTheme="@style/ThemeOverlay.Material3.Light"
              android:id="@+id/toolbar" />
 
