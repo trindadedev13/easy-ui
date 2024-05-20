@@ -43,14 +43,15 @@
             android:id="@+id/fname"
             android:textStyle="bold"
             android:textSize="16sp"
-            style="?android:attr/textAppearanceLarge"/>
+            andeoid:textColor="?attr/colorPrimary"
+            />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/ftype"
             android:textSize="12sp"
-            style="?android:attr/textViewStyle"/>
+            />
     </LinearLayout>
 
     <com.trindade.filepicker.widget.MaterialCheckbox

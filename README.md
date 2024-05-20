@@ -13,7 +13,7 @@
 ```
 
 # File-Picker
-[!TIP: USE THIS LIB WITH MATERIAL 3 FOR BEST RESULT]
+TIP: USE THIS LIB WITH MATERIAL 3 FOR BEST RESULT
 
 ```kotlin
  implementation("com.github.aquilesTrindade:trindade-util:filepicker:1.0.0")
