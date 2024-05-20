@@ -1,6 +1,6 @@
 package com.trindade.github.activites;
 
-import android.os.Bundle;
+/*import android.os.Bundle;
 import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,11 +21,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;*/
 
-public class GitHubContributorsActivity extends AppCompatActivity {
+public class GitHubContributorsActivity  {
 
-    private static final String BASE_URL = "https://api.github.com/";
+    /*private static final String BASE_URL = "https://api.github.com/";
     private GithubContributorsBinding binding;
     private ArrayList<HashMap<String, Object>> contributorsList = new ArrayList<>();
     private GitHubService service;
@@ -97,5 +97,5 @@ public class GitHubContributorsActivity extends AppCompatActivity {
         map.put("avatar-url", avatarUrl);
         contributorsList.add(map);
         binding.listCon.setAdapter(new ContributorsAdapter(GitHubContributorsActivity.this, contributorsList, binding.listCon));
-    }
+    }*/
 }

@@ -2,6 +2,7 @@ package com.trindade.github;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.content.Context; 
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,19 +30,22 @@ public class Api  {
     public String onwer = "onwer";
     public String repo = "repo";
     
+    public Context ctx;
+        
     private GithubContributorsBinding binding;
     private ArrayList<HashMap<String, Object>> contributorsList = new ArrayList<>();
     private GitHubService service;
 
-    @Override
+    /*@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = GithubContributorsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         initialize();
-    }
+    }*/
     
-    public void initialize () {
+    public void initialize (Context context) {
+        ctx = context;
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -102,6 +106,6 @@ public class Api  {
         map.put("bio", bio);
         map.put("avatar-url", avatarUrl);
         contributorsList.add(map);
-        binding.listCon.setAdapter(new ContributorsAdapter(GitHubContributorsActivity.this, contributorsList, binding.listCon));
+        binding.listCon.setAdapter(new ContributorsAdapter(ctx, contributorsList, binding.listCon));
     }
 }
