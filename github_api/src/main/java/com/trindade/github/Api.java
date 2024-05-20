@@ -27,7 +27,7 @@ public class Api  {
 
     public String baseUrl = "https://api.github.com/";
     public String onwer = "onwer";
-    public Strings repo = "repo";
+    public String repo = "repo";
     
     private GithubContributorsBinding binding;
     private ArrayList<HashMap<String, Object>> contributorsList = new ArrayList<>();

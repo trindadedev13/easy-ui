@@ -22,7 +22,7 @@ import com.bumptech.glide.Glide;
 
 import com.google.android.material.card.MaterialCardView;
 import com.trindade.R;
-import com.trindade.github.databinding.ContentContributorBinding;
+import com.trindade.databinding.ContentContributorBinding;
 import java.util.ArrayList;
 import java.util.HashMap;
 
