@@ -19,9 +19,6 @@ rootProject.name = "trindade"
 include(":views")
 include(":preferences")
 include(":filepicker")
-<<<<<<< HEAD
 include(":github_api")
-=======
 include(":github_api")
 include(":mercadopago")
->>>>>>> b0b89c3 (MercadoPago api add)
