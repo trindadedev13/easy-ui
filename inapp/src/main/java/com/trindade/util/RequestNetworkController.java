@@ -1,4 +1,4 @@
-package com.trindade;
+package com.trindade.util;
 
 import com.google.gson.Gson;
 

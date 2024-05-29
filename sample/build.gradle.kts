@@ -59,5 +59,4 @@ dependencies {
     implementation(project(":github_api"))
     implementation(project(":mercadopago"))
     implementation(project(":inapp"))
-    implementation(project(":utils"))
 }

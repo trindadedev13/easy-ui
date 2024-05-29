@@ -1,4 +1,4 @@
-package com.trindade;
+package com.trindade.util;
 
 import android.os.Bundle;
 import android.widget.Toast;

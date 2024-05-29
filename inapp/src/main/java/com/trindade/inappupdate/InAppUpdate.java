@@ -22,11 +22,11 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-import com.trindade.R;
-import com.trindade.FileUtil;
-import com.trindade.Logger;
-import com.trindade.RequestNetwork;
-import com.trindade.RequestNetworkController;
+import com.trindade.util.R;
+import com.trindade.util.FileUtil;
+import com.trindade.util.Logger;
+import com.trindade.util.RequestNetwork;
+import com.trindade.util.RequestNetworkController;
 
 public class InAppUpdate {
 
