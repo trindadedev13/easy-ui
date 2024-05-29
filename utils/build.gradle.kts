@@ -27,7 +27,7 @@ android {
             )
         }
     }
-   
+    
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -45,16 +45,13 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.squareup.okhttp3:okhttp:3.9.1")
-    implementation("com.google.code.gson:gson:2.8.7")
-    implementation(project(":utils"))
 }
 
 publishing {
     publications {
         register<MavenPublication>("release") {
             groupId = "com.github.aquilestrindade"
-            artifactId = "inapp"
+            artifactId = "utils"
             version = "1.0.0"
 
             afterEvaluate {

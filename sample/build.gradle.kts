@@ -52,6 +52,12 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation(project(":views"))
+    
+    implementation(project(":filepicker"))
     implementation(project(":preferences"))
+    implementation(project(":views"))
+    implementation(project(":github_api"))
+    implementation(project(":mercadopago"))
+    implementation(project(":inapp"))
+    implementation(project(":utils"))
 }
