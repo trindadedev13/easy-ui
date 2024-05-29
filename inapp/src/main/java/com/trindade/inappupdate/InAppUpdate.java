@@ -22,7 +22,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-import com.trindade.util.R;
+import com.trindade.R;
 import com.trindade.util.FileUtil;
 import com.trindade.util.Logger;
 import com.trindade.util.RequestNetwork;
