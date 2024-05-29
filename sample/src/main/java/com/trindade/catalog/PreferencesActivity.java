@@ -19,15 +19,13 @@ import com.trindade.preferences.switchpreference.SwitchPreference;
 
 public class PreferencesActivity extends AppCompatActivity {
 
-    private ActivityPrefsBinding binding;
+    private ActivityPreferencesBinding binding;
     public static int DEFAULT_BACKGROUND_COLOR = Color.parseColor("#fafafa");
     
     private Preference normalPreference;
     private InputPreference inputPreference;
     private SwitchPreference switchPreference;
-    
-    
-        
+            
     private View.OnClickListener positiveButtonListener = v -> {
         showToast(inputPreference.getDataTyped());
         inputPreference.closeInputDialog();
@@ -59,7 +57,7 @@ public class PreferencesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityPrefsBinding.inflate(getLayoutInflater());
+        binding = ActivityPreferencesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         init();
     }

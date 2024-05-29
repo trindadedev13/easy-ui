@@ -34,3 +34,11 @@ TIP: USE THIS LIB WITH MATERIAL 3 FOR BEST RESULT
  implementation("com.github.aquilesTrindade:trindade-util:github:1.0.0")
 ```
 
+# InApp
+
+* [In App README](https://github.com/aquilesTrindade/trindade-util/tree/release/inapp/README.md).
+
+```kotlin
+ implementation("com.github.aquilesTrindade:trindade-util:inapp:1.0.0")
+```
+
