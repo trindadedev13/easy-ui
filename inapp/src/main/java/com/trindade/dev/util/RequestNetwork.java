@@ -1,4 +1,4 @@
-package com.trindade.util;
+package com.trindade.dev.util;
 
 import android.app.Activity;
 
@@ -43,10 +43,5 @@ public class RequestNetwork {
 	
 	public void startRequestNetwork(String method, String url, String tag, RequestListener requestListener) {
 		RequestNetworkController.getInstance().execute(this, method, url, tag, requestListener);
-	}
-	
-	public interface RequestListener {
-		public void onResponse(String tag, String response, HashMap<String, Object> responseHeaders);
-		public void onErrorResponse(String tag, String message);
 	}
 }

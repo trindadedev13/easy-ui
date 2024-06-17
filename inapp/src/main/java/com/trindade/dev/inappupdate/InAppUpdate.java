@@ -1,4 +1,4 @@
-package com.trindade.inappupdate;
+package com.trindade.dev.inappupdate;
 
 import android.app.Activity;
 import android.app.DownloadManager;
@@ -23,126 +23,61 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 import com.trindade.R;
-import com.trindade.util.FileUtil;
-import com.trindade.util.Logger;
-import com.trindade.util.RequestNetwork;
-import com.trindade.util.RequestNetworkController;
+import com.trindade.dev.util.FileUtil;
+import com.trindade.dev.util.Logger;
+import com.trindade.dev.util.RequestListener;
+import com.trindade.dev.util.RequestNetwork;
+import com.trindade.dev.util.RequestNetworkController;
 
-public class InAppUpdate {
+public class InAppUpdate extends RequestListener {
 
     private String updDevice;
-    private String AppUID;
-    private String updUrl;
-    private String updPage;
-    private String updName;
-    private String updVersion;
-    private String updNews;
-    private String updMessage;
-    private String updSize;
     
     private String packageName;
-    
-    private boolean isUpdate;
-    private boolean isSuccess;
     
     private int versionCode;
     private int dlProgress;
     private int nacho;
     
     private Context context;
+        
+    private InAppListener inAppListener;
     
-    public Logger logger;
+    private RequestListener requestListener;
     
-    private RequestNetwork.RequestListener requestListener;
-    
-    public InAppUpdate(Context context, String AppUID) {
+    public InAppUpdate(Context context) {
         this.context = context;
-        this.AppUID = AppUID;
         logger = new Logger();
         initializeParams();
-        initializeRequestListener();
         startRequest();
     }
     
-    public String getLogs () {
-       return logger.getLogs();
-    }
-
     private void initializeParams() {
-        packageName = "";
-        versionCode = 0;
         updDevice = Build.ID;
-
         try {
             PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
             versionCode = packageInfo.versionCode;
             packageName = packageInfo.packageName;
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
-            logger.add(e.toString());
         }
     }
-
-    private void initializeRequestListener() {
-        requestListener = new RequestNetwork.RequestListener() {
-            @Override
-            public void onResponse(String rTag, String rResponse, HashMap<String, Object> rResponseHeaders) {
-                try {
-                    logger.add(rResponse);
-                    JSONObject _rResponse = new JSONObject(rResponse);
-                    
-                    isSuccess = true;
-                    updMessage = _rResponse.getString("message");
-                    updUrl = _rResponse.getString("url");
-                    updPage = _rResponse.getString("page");
-                    updName = _rResponse.getString("name");
-                    updSize = _rResponse.getString("size");
-                    updVersion = _rResponse.getString("versionName");
-                    updNews = _rResponse.getString("news");
-                    
-                    isUpdate = Boolean.parseBoolean(_rResponse.getString("update"));
-                } catch (JSONException e) {
-                    Log.e("InAppUpdate", "JSONException: " + e.getMessage());
-                    logger.add(e.toString());
-                    showMessage(context, string(R.string.server_failure));
-                }
-            }
-            @Override
-            public void onErrorResponse(String rTag, String rResponse) {
-                showMessage(context, "Falha na resposta da requisição");
-                logger.add(rResponse);
-            }
-        };
+    
+    @Override
+    public void onResponse(String rTag, String rResponse, HashMap<String, Object> rResponseHeaders) {
+          try {
+              JSONObject _rResponse = new JSONObject(rResponse);
+              inAppListener.onInitialize(_rResponse);
+          } catch (JSONException e) {
+              inAppListener.onError(e.toString());
+          }
     }
-
-    public Boolean isExistUpdate() {
-        return isUpdate;
+    
+    @Override
+    public void onErrorResponse(String rTag, String rResponse) {
+        inAppListener.onError(e.toString());
     }
-
-    public String getUrl() {
-        return updUrl;
-    }
-
-    public String getPage() {
-        return updPage;
-    }
-
-    public String getName() {
-        return updName;
-    }
-
-    public String getSize() {
-        return updSize;
-    }
-
-    public String getVersion() {
-        return updVersion;
-    }
-
-    public String getNews() {
-        return updNews;
-    }
-
+  
     public void downloadUpdate(String downloadUrl, String downloadName) {
         ConnectivityManager connMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
@@ -215,7 +150,7 @@ public class InAppUpdate {
 
         RequestNetwork requestNetwork = new RequestNetwork((Activity) context);
         requestNetwork.setParams(map, RequestNetworkController.REQUEST_BODY);
-        requestNetwork.startRequestNetwork(RequestNetworkController.PUT, "https://mobsoft-services-update.up.railway.app/update/service/receive", "", requestListener);
+        requestNetwork.startRequestNetwork(RequestNetworkController.PUT, "https://mobsoft-services-update.up.railway.app/update/service/receive", "", this);
     }
 
     public void installUpdate(Context context, String fileName) {

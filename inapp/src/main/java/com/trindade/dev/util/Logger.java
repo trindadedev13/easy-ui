@@ -1,4 +1,4 @@
-package com.trindade.util;
+package com.trindade.dev.util;
 
 import java.util.ArrayList;
 import java.util.List;
