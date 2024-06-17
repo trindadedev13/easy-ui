@@ -41,8 +41,9 @@ public class InAppUpdate implements RequestListener {
     
     private RequestListener requestListener;
     
-    public InAppUpdate(Context context) {
+    public InAppUpdate(Context context, InAppListener inAppListener) {
         this.context = context;
+        this.inAppListener = inAppListener;
         initializeParams();
         startRequest();
     }
