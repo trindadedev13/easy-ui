@@ -29,7 +29,7 @@ import com.trindade.dev.util.RequestListener;
 import com.trindade.dev.util.RequestNetwork;
 import com.trindade.dev.util.RequestNetworkController;
 
-public class InAppUpdate extends RequestListener {
+public class InAppUpdate implements RequestListener {
 
     private String updDevice;
     
@@ -47,7 +47,6 @@ public class InAppUpdate extends RequestListener {
     
     public InAppUpdate(Context context) {
         this.context = context;
-        logger = new Logger();
         initializeParams();
         startRequest();
     }
@@ -99,7 +98,6 @@ public class InAppUpdate extends RequestListener {
             new Thread(() -> {
                 boolean downloading = true;
                 while (downloading) {
-                    logger.add("downloading...");
                     DownloadManager.Query q = new DownloadManager.Query();
                     q.setFilterById(downloadId);
                     
@@ -165,11 +163,9 @@ public class InAppUpdate extends RequestListener {
                 context.startActivity(intent);
             } catch (ActivityNotFoundException e) {
                 e.printStackTrace();
-                logger.add(e.toString());
                 showMessage(context, string(R.string.error_on_open));
             }
         } else {
-            logger.add("installing");
             Toast.makeText(context, string(R.string.installing), Toast.LENGTH_LONG).show();
         }
     }
