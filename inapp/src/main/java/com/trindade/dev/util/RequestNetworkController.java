@@ -96,7 +96,7 @@ public class RequestNetworkController {
 		return client;
 	}
 	
-	public void execute(final RequestNetwork requestNetwork, String method, String url, final String tag, final RequestNetwork.RequestListener requestListener) {
+	public void execute(final RequestNetwork requestNetwork, String method, String url, final String tag, final RequestListener requestListener) {
 		Request.Builder reqBuilder = new Request.Builder();
 		Headers.Builder headerBuilder = new Headers.Builder();
 		

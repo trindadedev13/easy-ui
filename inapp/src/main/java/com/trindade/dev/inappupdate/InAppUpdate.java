@@ -23,11 +23,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 import com.trindade.R;
-import com.trindade.dev.util.FileUtil;
-import com.trindade.dev.util.Logger;
-import com.trindade.dev.util.RequestListener;
-import com.trindade.dev.util.RequestNetwork;
-import com.trindade.dev.util.RequestNetworkController;
+import com.trindade.dev.util.*;
 
 public class InAppUpdate implements RequestListener {
 
@@ -74,7 +70,7 @@ public class InAppUpdate implements RequestListener {
     
     @Override
     public void onErrorResponse(String rTag, String rResponse) {
-        inAppListener.onError(e.toString());
+        inAppListener.onError(rResponse);
     }
   
     public void downloadUpdate(String downloadUrl, String downloadName) {
