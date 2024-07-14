@@ -12,4 +12,10 @@
         <attr name="preferencePopupTitle" format="string" />
         <attr name="preferencePopupDescription" format="string" />
     </declare-styleable>
+    
+    <declare-styleable name="PreferenceSwitch">
+        <attr name="preferenceSwitchTitle" format="string" />
+        <attr name="preferenceSwitchDescription" format="string" />
+        <attr name="preferenceSwitchDefaultValue" format="boolean" />
+    </declare-styleable>
 </resources>
