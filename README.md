@@ -1,9 +1,6 @@
 # Trindade Utils Library 
 
-```kotlin
- val trindadeutil_version = 
-```
-[![](https://jitpack.io/v/aquilesTrindade/trindade-util.svg)](https://jitpack.io/#aquilesTrindade/trindade-util)
+val trindadeutil_version = [![](https://jitpack.io/v/aquilesTrindade/trindade-util.svg)](https://jitpack.io/#aquilesTrindade/trindade-util)
 # Preferences
 
 * [Preferences README](https://github.com/aquilesTrindade/trindade-util/tree/release/filepicker/README.md).
