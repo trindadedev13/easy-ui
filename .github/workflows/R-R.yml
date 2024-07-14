@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - .github/workflows/debugCompile.yml
+      - .github/workflows/R-R.yml
       - filepicker/**
       - inapp/**
       - views/**
@@ -12,7 +12,6 @@ on:
       - preferencesv2/**
       - github_api/**
       - mercadopago/**
-      - **
       - build.gradle.kts
       - gradle.properties
       - gradlew
