@@ -5,9 +5,13 @@ on:
   push:
     paths:
       - .github/workflows/debugCompile.yml
-      - app/**
-      - **
-      - language/**
+      - filepicker/**
+      - inapp/**
+      - views/**
+      - preferences/**
+      - preferencesv2/**
+      - github_api/**
+      - mercadopago/**
       - build.gradle.kts
       - gradle.properties
       - gradlew
