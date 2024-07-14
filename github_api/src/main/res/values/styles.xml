@@ -1,0 +1,85 @@
+<resources>
+  <style name="Widget.GitHub.Button" parent="Widget.Material3.Button.UnelevatedButton">
+    <item name="android:insetBottom">0dp</item>
+    <item name="android:insetTop">0dp</item>
+    <item name="shapeAppearance">@style/Shape.GitHub.Button</item>
+  </style>
+
+  <style name="Widget.GitHub.Button.OutlinedButton" parent="Widget.Material3.Button.OutlinedButton">
+    <item name="android:insetBottom">0dp</item>
+    <item name="android:insetTop">0dp</item>
+    <item name="shapeAppearance">@style/Shape.GitHub.Button</item>
+  </style>
+
+  <style name="Widget.GitHub.Button.TonalButton" parent="Widget.Material3.Button.TonalButton">
+    <item name="android:insetBottom">0dp</item>
+    <item name="android:insetTop">0dp</item>
+    <item name="shapeAppearance">@style/Shape.GitHub.Button</item>
+  </style>
+
+  <style name="Shape.GitHub" parent="">
+    <item name="cornerFamily">rounded</item>
+  </style>
+
+  <style name="Shape.GitHub.Button">
+    <item name="cornerSize">8dp</item>
+  </style>
+  
+    <style name="ThemeOverlay.Github.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+    <item name="alertDialogStyle">@style/Dialog.Github</item>
+    <item name="buttonBarButtonStyle">@style/Widget.Github.Button.Dialog</item>
+    <item name="buttonBarPositiveButtonStyle">@style/Widget.Github.Button.Dialog</item>
+    <item name="buttonBarNegativeButtonStyle">@style/Widget.Github.Button.Tonal.Dialog</item>
+    <item name="buttonBarNeutralButtonStyle">@style/Widget.Github.Button.Tonal.Dialog</item>
+    <item name="materialAlertDialogBodyTextStyle">@style/Dialog.Github.Body.Text</item>
+    <item name="materialAlertDialogTitleTextStyle">@style/Dialog.Github.Title.Text</item>
+    <item name="materialAlertDialogTitlePanelStyle">@style/Dialog.Github.Title.Panel</item>
+    <item name="android:backgroundDimAmount">0.4</item>
+    <item name="android:windowAnimationStyle">@style/Dialog.Github.Animation</item>
+    <item name="android:windowElevation">@dimen/dialog_elevation</item>
+  </style>
+
+  <style name="Dialog.Github.Base" parent="MaterialAlertDialog.Material3">
+    <item name="backgroundTint">?attr/colorSurface</item>
+    <item name="shapeAppearance">@style/Dialog.Github.Shape</item>
+    <item name="android:layout">@layout/github_dialog</item>
+  </style>
+
+  <style name="Dialog.Github" parent="Dialog.Github.Base" />
+
+  <style name="Dialog.Github.Shape" parent="">
+    <item name="cornerSize">16dp</item>
+  </style>
+
+  <style name="Dialog.Github.Title.Panel" parent="MaterialAlertDialog.Material3.Title.Panel">
+    <item name="android:orientation">vertical</item>
+    <item name="android:paddingTop">24dp</item>
+  </style>
+
+  <style name="Dialog.Github.Title.Text" parent="MaterialAlertDialog.Material3.Title.Text">
+    <item name="android:textAppearance">@style/TextAppearance.Github.Dialog.Title</item>
+  </style>
+
+  <style name="Dialog.Github.Body.Text" parent="MaterialAlertDialog.Material3.Body.Text">
+    <item name="android:textAppearance">@style/TextAppearance.Github.Dialog.Body</item>
+  </style>
+
+  <style name="Dialog.Github.Animation">
+    <item name="android:windowEnterAnimation">@anim/dialog_enter</item>
+    <item name="android:windowExitAnimation">@anim/dialog_exit</item>
+  </style>
+
+  <style name="TextAppearance.Github.Dialog.Title" parent="TextAppearance.Material3.TitleLarge">
+    <item name="android:fontFamily">@font/product_sans_medium</item>
+    <item name="android:lineHeight">26sp</item>
+    <item name="android:textSize">22sp</item>
+  </style>
+
+  <style name="TextAppearance.Github.Dialog.Body" parent="TextAppearance.Material3.BodyLarge">
+    <item name="android:lineHeight">22sp</item>
+    <item name="android:textSize">15sp</item>
+  </style>
+
+  <style name="Widget.Github.Button.Dialog" parent="Widget.Github.Button" />
+  <style name="Widget.Github.Button.Tonal.Dialog" parent="Widget.Github.Button.TonalButton" />
+</resources>
