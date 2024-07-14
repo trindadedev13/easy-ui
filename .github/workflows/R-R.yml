@@ -12,6 +12,7 @@ on:
       - preferencesv2/**
       - github_api/**
       - mercadopago/**
+      - **
       - build.gradle.kts
       - gradle.properties
       - gradlew
