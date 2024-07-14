@@ -1,9 +1,27 @@
 name: Release
 
 on:
+  workflow_dispatch:
   push:
-    branches:
-      - release
+    paths:
+      - .github/workflows/debugCompile.yml
+      - app/**
+      - language/**
+      - build.gradle.kts
+      - gradle.properties
+      - gradlew
+      - gradlew.bat
+      - settings.gradle.kts
+  pull_request:
+    paths:
+      - .github/workflows/debugCompile.yml
+      - app/**
+      - language/**
+      - build.gradle.kts
+      - gradle.properties
+      - gradlew
+      - gradlew.bat
+      - settings.gradle.kts    
 
 jobs:
   build:

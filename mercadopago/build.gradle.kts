@@ -7,10 +7,10 @@ plugins {
     id("maven-publish")
 }
 
-group = "com.trindade"
+group = "dev.trindadeaquiles"
 
 android {
-    namespace = "com.trindade"
+    namespace = "dev.trindadeaquiles"
     compileSdk = 34
     
     defaultConfig {
@@ -54,7 +54,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.aquilestrindade"
             artifactId = "mercadopago"
-            version = "1.0.0"
+            version = "3.0.0"
 
             afterEvaluate {
                 from(components["release"])
