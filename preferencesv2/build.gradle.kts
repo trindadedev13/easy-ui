@@ -32,8 +32,13 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+    
     kotlinOptions {
         jvmTarget = "17"
+    }
+    
+    buildFeatures {
+        viewBinding = true
     }
 }
 
@@ -45,7 +50,6 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation(project(":views"))
 }
 
 publishing {
