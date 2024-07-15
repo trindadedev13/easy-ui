@@ -5,7 +5,7 @@
     android:background="?selectableItemBackground">
 
     <TextView
-        android:id="@+id/preferenceName"
+        android:id="@+id/preference_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
