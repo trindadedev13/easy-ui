@@ -1,4 +1,4 @@
-package dev.trindadeaquiles;
+package dev.trindadeaquiles.lib;
 
 import android.app.Activity;
 
