@@ -7,16 +7,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
-
-import com.google.android.material.materialswitch.MaterialSwitch;
+import android.widget.TextView;
 
 import dev.trindadedev.lib.R;
-import dev.trindadedev.lib.databinding.LayoutPreferenceSwitchBinding;
+
+import com.google.android.material.materialswitch.MaterialSwitch;
 
 public class PreferenceSwitch extends RelativeLayout implements View.OnClickListener {
 
     private boolean value = false;
-    private LayoutPreferenceSwitchBinding binding;
+    private TextView preferenceName;
+    private TextView preferenceDescription;
+    private MaterialSwitch preferenceSwitch;
 
     public PreferenceSwitch(Context context) {
         super(context);
@@ -34,7 +36,12 @@ public class PreferenceSwitch extends RelativeLayout implements View.OnClickList
     }
 
     private void initialize(Context context, AttributeSet attrs) {
-        binding = LayoutPreferenceSwitchBinding.inflate(LayoutInflater.from(context), this, true);
+        LayoutInflater.from(context).inflate(R.layout.layout_preference_switch, this, true);
+
+        preferenceName = findViewById(R.id.preference_name);
+        preferenceDescription = findViewById(R.id.preference_description);
+        preferenceSwitch = findViewById(R.id.preference_switch);
+
         setOnClickListener(this);
 
         if (attrs != null) {
@@ -63,7 +70,7 @@ public class PreferenceSwitch extends RelativeLayout implements View.OnClickList
 
     public void setValue(boolean value) {
         this.value = value;
-        binding.preferenceSwitch.setChecked(value);
+        preferenceSwitch.setChecked(value);
     }
 
     @Override
@@ -72,14 +79,14 @@ public class PreferenceSwitch extends RelativeLayout implements View.OnClickList
     }
 
     public void setDescription(String value) {
-        binding.preferenceDescription.setText(value);
+        preferenceDescription.setText(value);
     }
 
     public void setTitle(String value) {
-        binding.preferenceName.setText(value);
+        preferenceName.setText(value);
     }
 
     public void setSwitchChangedListener(CompoundButton.OnCheckedChangeListener onCheckedChangeListener) {
-        binding.preferenceSwitch.setOnCheckedChangeListener(onCheckedChangeListener);
+        preferenceSwitch.setOnCheckedChangeListener(onCheckedChangeListener);
     }
 }

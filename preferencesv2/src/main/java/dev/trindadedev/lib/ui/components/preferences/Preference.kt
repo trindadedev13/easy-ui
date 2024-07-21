@@ -5,9 +5,9 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.TextView
 
 import dev.trindadedev.lib.R
-import dev.trindadedev.lib.databinding.LayoutPreferenceBinding
 
 class Preference @JvmOverloads constructor(
     context: Context,
@@ -15,9 +15,17 @@ class Preference @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
-    private val binding: LayoutPreferenceBinding = LayoutPreferenceBinding.inflate(LayoutInflater.from(context), this, true)
+    private val preferenceTitle: TextView
+    private val preferenceDescription: TextView
+    private val preference: View
 
     init {
+        LayoutInflater.from(context).inflate(R.layout.layout_preference, this, true)
+
+        preferenceTitle = findViewById(R.id.preferenceTitle)
+        preferenceDescription = findViewById(R.id.preferenceDescription)
+        preference = findViewById(R.id.preference)
+
         context.theme.obtainStyledAttributes(
             attrs,
             R.styleable.Preference,
@@ -26,23 +34,23 @@ class Preference @JvmOverloads constructor(
             try {
                 val title = getString(R.styleable.Preference_preferenceTitle) ?: ""
                 val description = getString(R.styleable.Preference_preferenceDescription) ?: ""
-                binding.preferenceTitle.text = title
-                binding.preferenceDescription.text = description
+                preferenceTitle.text = title
+                preferenceDescription.text = description
             } finally {
                 recycle()
             }
         }
     }
 
-    public fun setPreferenceClickListener(listenerClick: View.OnClickListener) {
-        binding.preference.setOnClickListener(listenerClick)
+    fun setPreferenceClickListener(listenerClick: View.OnClickListener) {
+        preference.setOnClickListener(listenerClick)
     }
     
-    public fun setTitle(value: String) {
-         binding.preferenceTitle.text = value
+    fun setTitle(value: String) {
+         preferenceTitle.text = value
     }
     
-    public fun setDescription(value: String) {
-         binding.preferenceDescription.text = value
+    fun setDescription(value: String) {
+         preferenceDescription.text = value
     }
 }

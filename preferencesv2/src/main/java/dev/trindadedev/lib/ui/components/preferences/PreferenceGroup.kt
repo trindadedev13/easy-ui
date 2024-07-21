@@ -6,9 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-
+import android.widget.TextView
 import dev.trindadedev.lib.R
-import dev.trindadedev.lib.databinding.LayoutPreferenceGroupBinding
 
 class PreferenceGroup @JvmOverloads constructor(
     context: Context,
@@ -16,10 +15,17 @@ class PreferenceGroup @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
-    private val binding: LayoutPreferenceGroupBinding =
-        LayoutPreferenceGroupBinding.inflate(LayoutInflater.from(context), this, true)
+    private val preferenceGroupTitle: TextView
+    private val preferenceGroupContent: LinearLayout
+    private val preferenceGroup: View
 
     init {
+        LayoutInflater.from(context).inflate(R.layout.layout_preference_group, this, true)
+
+        preferenceGroupTitle = findViewById(R.id.preferenceGroupTitle)
+        preferenceGroupContent = findViewById(R.id.preferenceGroupContent)
+        preferenceGroup = findViewById(R.id.preferenceGroup)
+
         context.theme.obtainStyledAttributes(
             attrs,
             R.styleable.PreferenceGroup,
@@ -27,7 +33,7 @@ class PreferenceGroup @JvmOverloads constructor(
         ).apply {
             try {
                 val title = getString(R.styleable.PreferenceGroup_preferenceGroupTitle) ?: ""
-                binding.preferenceGroupTitle.text = title
+                preferenceGroupTitle.text = title
             } finally {
                 recycle()
             }
@@ -36,10 +42,10 @@ class PreferenceGroup @JvmOverloads constructor(
     }
 
     fun addPreference(view: View) {
-        binding.preferenceGroupContent.addView(view)
+        preferenceGroupContent.addView(view)
     }
 
     override fun setOnClickListener(listener: OnClickListener?) {
-        binding.preferenceGroup.setOnClickListener(listener)
+        preferenceGroup.setOnClickListener(listener)
     }
 }

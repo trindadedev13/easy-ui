@@ -1,16 +1,14 @@
 package dev.trindadedev.lib.ui.components.preferences
 
 import android.content.Context
-import android.view.LayoutInflater
 import android.util.AttributeSet
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.PopupMenu
-
-import androidx.annotation.NonNull
+import android.widget.TextView
 
 import dev.trindadedev.lib.R
-import dev.trindadedev.lib.databinding.LayoutPreferenceBinding
 
 class PreferencePopup @JvmOverloads constructor(
     context: Context,
@@ -18,10 +16,18 @@ class PreferencePopup @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
-    private val binding: LayoutPreferenceBinding = LayoutPreferenceBinding.inflate(LayoutInflater.from(context), this, true)
+    private val preferenceTitle: TextView
+    private val preferenceDescription: TextView
+    private val preference: View
     val popupMenu: PopupMenu = PopupMenu(context, this)
 
     init {
+        LayoutInflater.from(context).inflate(R.layout.layout_preference, this, true)
+
+        preferenceTitle = findViewById(R.id.preferenceTitle)
+        preferenceDescription = findViewById(R.id.preferenceDescription)
+        preference = findViewById(R.id.preference)
+
         context.theme.obtainStyledAttributes(
             attrs,
             R.styleable.PreferencePopup,
@@ -30,14 +36,14 @@ class PreferencePopup @JvmOverloads constructor(
             try {
                 val title = getString(R.styleable.PreferencePopup_preferencePopupTitle) ?: ""
                 val description = getString(R.styleable.PreferencePopup_preferencePopupDescription) ?: ""
-                binding.preferenceTitle.text = title
-                binding.preferenceDescription.text = description
+                preferenceTitle.text = title
+                preferenceDescription.text = description
             } finally {
                 recycle()
             }
         }
 
-        binding.preference.setOnClickListener { popupMenu.show() }
+        preference.setOnClickListener { popupMenu.show() }
     }
 
     fun addPopupMenuItem(itemTitle: String) {
