@@ -22,8 +22,8 @@ class Preference @JvmOverloads constructor(
     init {
         LayoutInflater.from(context).inflate(R.layout.layout_preference, this, true)
 
-        preferenceTitle = findViewById(R.id.preferenceTitle)
-        preferenceDescription = findViewById(R.id.preferenceDescription)
+        preferenceTitle = findViewById(R.id.preference_title)
+        preferenceDescription = findViewById(R.id.preference_description)
         preference = findViewById(R.id.preference)
 
         context.theme.obtainStyledAttributes(

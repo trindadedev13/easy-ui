@@ -22,9 +22,9 @@ class PreferenceGroup @JvmOverloads constructor(
     init {
         LayoutInflater.from(context).inflate(R.layout.layout_preference_group, this, true)
 
-        preferenceGroupTitle = findViewById(R.id.preferenceGroupTitle)
-        preferenceGroupContent = findViewById(R.id.preferenceGroupContent)
-        preferenceGroup = findViewById(R.id.preferenceGroup)
+        preferenceGroupTitle = findViewById(R.id.preference_group_title)
+        preferenceGroupContent = findViewById(R.id.preference_group_content)
+        preferenceGroup = findViewById(R.id.preference_group)
 
         context.theme.obtainStyledAttributes(
             attrs,
