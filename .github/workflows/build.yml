@@ -1,17 +1,12 @@
-name: Release
+name: Build LIB
 
 on:
   workflow_dispatch:
   push:
     paths:
-      - .github/workflows/R-R.yml
+      - .github/workflows/build.yml
       - filepicker/**
-      - inapp/**
-      - views/**
-      - preferences/**
-      - preferencesv2/**
-      - github_api/**
-      - mercadopago/**
+      - components/**
       - build.gradle.kts
       - gradle.properties
       - gradlew
@@ -19,14 +14,14 @@ on:
       - settings.gradle.kts
   pull_request:
     paths:
-      - .github/workflows/debugCompile.yml
-      - app/**
-      - language/**
+      - .github/workflows/build.yml
+      - filepicker/**
+      - components/**
       - build.gradle.kts
       - gradle.properties
       - gradlew
       - gradlew.bat
-      - settings.gradle.kts    
+      - settings.gradle.kts
 
 jobs:
   build:
@@ -52,9 +47,3 @@ jobs:
         uses: gradle/gradle-build-action@v3
         with:
           arguments: assembleRelease
-
-      - name: Upload release apk
-        uses: actions/upload-artifact@v4
-        with:
-          name: Release
-          path: app/build/outputs/apk/release/
