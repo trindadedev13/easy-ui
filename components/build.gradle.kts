@@ -27,13 +27,18 @@ android {
             )
         }
     }
-    
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+    
     kotlinOptions {
         jvmTarget = "17"
+    }
+    
+    buildFeatures {
+        viewBinding = true
     }
 }
 
@@ -51,7 +56,7 @@ publishing {
     publications {
         register<MavenPublication>("release") {
             groupId = "com.github.aquilestrindade"
-            artifactId = "filepicker"
+            artifactId = "components"
             version = "3.0.4"
 
             afterEvaluate {

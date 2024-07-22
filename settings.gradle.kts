@@ -16,10 +16,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "trindade"
 
-include(":views")
-include(":preferences")
-include(":preferencesv2")
+include(":components")
 include(":filepicker")
-include(":github_api")
-include(":mercadopago")
-include(":inapp")
