@@ -12,7 +12,7 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.textfield.TextInputEditText
 
 import dev.trindadedev.lib.R
-import dev.trindadedev.lib.databinding.LayoutRbkTextfieldBinding
+import dev.trindadedev.lib.databinding.LayoutTinputTextfieldBinding
 
 class TInput @JvmOverloads constructor(
     context: Context,
@@ -20,7 +20,7 @@ class TInput @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
-    private val binding: LayoutRbkTextfieldBinding = LayoutRbkTextfieldBinding.inflate(
+    private val binding: LayoutTinputTextfieldBinding = LayoutTinputTextfieldBinding.inflate(
         LayoutInflater.from(context),
         this,
         true
