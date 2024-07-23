@@ -6,13 +6,10 @@ import android.view.LayoutInflater
 import android.widget.LinearLayout
 import android.text.Editable
 import android.text.TextUtils
-
 import androidx.core.content.ContextCompat
-
 import com.google.android.material.textfield.TextInputEditText
-
+import com.google.android.material.textfield.TextInputLayout
 import dev.trindadedev.lib.R
-import dev.trindadedev.lib.databinding.LayoutTinputTextfieldBinding
 
 class TInput @JvmOverloads constructor(
     context: Context,
@@ -20,55 +17,56 @@ class TInput @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
-    private val binding: LayoutTinputTextfieldBinding = LayoutTinputTextfieldBinding.inflate(
-        LayoutInflater.from(context),
-        this,
-        true
-    )
+    private val textInputLayout: TextInputLayout
+    private val textInputEditText: TextInputEditText
 
     init {
+        val view = LayoutInflater.from(context).inflate(R.layout.layout_tinput_textfield, this, true)
+        textInputLayout = view.findViewById(R.id.text_input_layout)
+        textInputEditText = view.findViewById(R.id.text_input_edittext)
+
         val typedArray = context.obtainStyledAttributes(attrs, R.styleable.TInput, defStyleAttr, 0)
-        
-        binding.background.hint = typedArray.getString(R.styleable.TInput_hint)
-        binding.background.placeholderText = typedArray.getString(R.styleable.TInput_placeholderText)
-        
+
+        textInputLayout.hint = typedArray.getString(R.styleable.TInput_hint)
+        textInputLayout.placeholderText = typedArray.getString(R.styleable.TInput_placeholderText)
+
         val textString: String? = typedArray.getString(R.styleable.TInput_text)
         val editableText: Editable? = if (!TextUtils.isEmpty(textString)) {
             Editable.Factory.getInstance().newEditable(textString)
         } else {
             null
         }
-        binding.edittext.text = editableText
-        
+        textInputEditText.text = editableText
+
         val startIconDrawableRes = typedArray.getResourceId(R.styleable.TInput_startIconDrawable, 0)
         if (startIconDrawableRes != 0) {
-            binding.background.startIconDrawable = ContextCompat.getDrawable(context, startIconDrawableRes)
+            textInputLayout.startIconDrawable = ContextCompat.getDrawable(context, startIconDrawableRes)
         }
-        
+
         typedArray.recycle()
     }
 
     var hint: CharSequence?
-        get() = binding.background.hint
+        get() = textInputLayout.hint
         set(value) {
-            binding.background.hint = value
+            textInputLayout.hint = value
         }
 
     var placeholderText: CharSequence?
-        get() = binding.background.placeholderText
+        get() = textInputLayout.placeholderText
         set(value) {
-            binding.background.placeholderText = value
+            textInputLayout.placeholderText = value
         }
 
     var startIconDrawableRes: Int
         get() = 0
         set(value) {
-            binding.background.startIconDrawable = ContextCompat.getDrawable(context, value)
+            textInputLayout.startIconDrawable = ContextCompat.getDrawable(context, value)
         }
 
     var text: CharSequence?
-        get() = binding.edittext.text
+        get() = textInputEditText.text
         set(value) {
-            binding.edittext.setText(value)
+            textInputEditText.setText(value)
         }
 }

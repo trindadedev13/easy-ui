@@ -5,11 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/textInputLayout"
+    android:id="@+id/text_input_layout"
     android:transitionGroup="true">
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText"
+        android:id="@+id/text_input_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:maxLines="1" />
