@@ -57,7 +57,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.aquilestrindade"
             artifactId = "components"
-            version = "3.0.4"
+            version = "3.0.5"
 
             afterEvaluate {
                 from(components["release"])

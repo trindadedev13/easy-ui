@@ -5,8 +5,11 @@ val trindadeutil_version = [![](https://jitpack.io/v/aquilesTrindade/trindade-ut
 # Components
 * [Components README](https://github.com/aquilesTrindade/trindade-util/tree/release/components/README.md).
 ```kotlin
- implementation("com.github.aquilesTrindade:trindade-util:components:$trindadeutil_version")
-```
+ // Normal implementation
+    implementation("com.github.aquilesTrindade:trindade-util:components:$trindadeutil_version")
+ // Compose
+    implementation("com.github.aquilesTrindade:trindade-util:components-compose:$trindadeutil_version")
+``` 
 
 # File-Picker
 TIP: USE THIS LIB WITH MATERIAL 3 FOR BEST RESULT
