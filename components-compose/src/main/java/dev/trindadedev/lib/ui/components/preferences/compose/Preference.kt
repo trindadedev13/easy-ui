@@ -1,4 +1,4 @@
-package dev.trindadedev.lib.ui.components.preferences
+package dev.trindadedev.lib.ui.components.preferences.compose
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.*
@@ -14,19 +14,19 @@ import androidx.compose.ui.graphics.*
 import dev.trindadedev.lib.R
 
 @Composable
-fun PreferenceSwitch(
+fun Preference(
     iconResId: Int,
     title: String,
     summary: String,
-    isSwitchChecked: Boolean,
-    onSwitchCheckedChange: (Boolean) -> Unit
+    onClick: () -> Unit = {}
 ) {
     val selectableItemBackground = MaterialTheme.colorScheme.surfaceVariant
 
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .background(selectableItemBackground, shape = MaterialTheme.shapes.small)
+            .background(selectableItemBackground, shape = RoundedCornerShape(4.dp))
+            .clickable(onClick = onClick)
             .padding(horizontal = 24.dp, vertical = 20.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(24.dp)
@@ -55,13 +55,12 @@ fun PreferenceSwitch(
             )
         }
 
-        Switch(
-            checked = isSwitchChecked,
-            onCheckedChange = onSwitchCheckedChange,
-            colors = SwitchDefaults.colors(
-                checkedThumbColor = MaterialTheme.colorScheme.primary,
-                uncheckedThumbColor = Color.Gray
-            )
-        )
+        Box(
+            modifier = Modifier
+                .wrapContentWidth()
+                .align(Alignment.CenterVertically)
+        ) {
+            
+        }
     }
 }
