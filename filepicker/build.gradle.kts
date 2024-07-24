@@ -52,7 +52,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.aquilestrindade"
             artifactId = "filepicker"
-            version = "3.0.5"
+            version = "3.0.6"
 
             afterEvaluate {
                 from(components["release"])
