@@ -17,4 +17,5 @@ dependencyResolutionManagement {
 rootProject.name = "trindade"
 
 include(":components")
+include(":components-compose")
 include(":filepicker")
