@@ -21,7 +21,6 @@ fun PreferenceSwitch(
     isSwitchChecked: Boolean,
     onSwitchCheckedChange: (Boolean) -> Unit
 ) {
-    
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -49,6 +48,8 @@ fun PreferenceSwitch(
                 text = summary,
                 style = MaterialTheme.typography.bodyMedium.copy(fontSize = 15.sp),
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
                 modifier = Modifier.padding(top = 1.dp)
             )
         }

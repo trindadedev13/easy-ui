@@ -12,7 +12,6 @@ import androidx.compose.ui.unit.*
 import androidx.compose.ui.graphics.*
 
 import dev.trindadedev.lib.R
-
 @Composable
 fun Preference(
     iconResId: Int,
@@ -20,7 +19,6 @@ fun Preference(
     summary: String,
     onClick: () -> Unit = {}
 ) {
-    
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -49,16 +47,10 @@ fun Preference(
                 text = summary,
                 style = MaterialTheme.typography.bodyMedium.copy(fontSize = 15.sp),
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
                 modifier = Modifier.padding(top = 1.dp)
             )
-        }
-
-        Box(
-            modifier = Modifier
-                .wrapContentWidth()
-                .align(Alignment.CenterVertically)
-        ) {
-            
         }
     }
 }
