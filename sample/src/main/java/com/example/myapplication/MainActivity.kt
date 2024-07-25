@@ -3,6 +3,7 @@ package com.example.myapplication
 import android.os.Bundle
 
 import androidx.activity.*
+import androidx.activity.compose.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.*
 import androidx.compose.foundation.*
