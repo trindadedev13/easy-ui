@@ -22,7 +22,23 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                   //
+                   Preference(
+                      iconResId = R.drawable.ic_settings_24,
+                      title = "Settings",
+                      summary = "Customize app with app settings",
+                      onClick = {
+                         
+                      }
+                   )
+                   PreferenceSwitch(
+                      iconResId = R.drawable.ic_settings_24,
+                      title = "Night mode",
+                      summary = "Active night mode for night",
+                      isSwitchChecked = false,
+                      onSwitchCheckedChange = { isChecked ->
+                      
+                      }
+                   )
                 }
             }
         }
