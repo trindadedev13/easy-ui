@@ -24,7 +24,6 @@ fun Preference(
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .background(shape = RoundedCornerShape(4.dp))
             .clickable(onClick = onClick)
             .padding(horizontal = 24.dp, vertical = 20.dp),
         verticalAlignment = Alignment.CenterVertically,
