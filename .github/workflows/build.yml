@@ -54,7 +54,7 @@ jobs:
 
       - name: Sign APK
         id: sign_apk
-        uses: noriban/sign-android-release@v3
+        uses: noriban/sign-android-release@v5
         with:
           releaseDirectory: sample/build/outputs/apk/release
           signingKeyBase64: ${{ secrets.KEYSTORE_FILE }}
