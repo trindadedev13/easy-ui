@@ -57,7 +57,7 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
 dependencies {
       implementation(platform("androidx.compose:compose-bom:2022.12.00"))
       debugImplementation("androidx.compose.ui:ui-test-manifest")
-      implementation("androidx.core:core-ktx:1.8.0")
+      implementation("androidx.core:core-ktx:1.13.1")
       debugImplementation("androidx.compose.ui:ui-tooling")
       implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")
       implementation("androidx.compose.material3:material3")
