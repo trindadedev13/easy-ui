@@ -24,10 +24,10 @@ fun PreferenceSwitch(
 ) {
     Row(
         modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 24.dp, vertical = 20.dp),
+            .padding(horizontal = 24.dp, vertical = 20.dp)
+            .wrapContentWidth(), 
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(24.dp)
+        horizontalArrangement = Arrangement.Start // Alinhe à esquerda
     ) {
         Icon(
             painter = painterResource(id = iconResId),

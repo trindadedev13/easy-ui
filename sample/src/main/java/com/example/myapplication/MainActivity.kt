@@ -20,6 +20,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val switchValue = by remember { mutableStateOf(false) }
         setContent {
             MyComposeApplicationTheme {
                 Surface(
@@ -38,9 +39,9 @@ class MainActivity : ComponentActivity() {
                       iconResId = R.drawable.ic_settings_24,
                       title = "Night mode",
                       summary = "Active night mode for night",
-                      isSwitchChecked = false,
+                      isSwitchChecked = switchValue,
                       onSwitchCheckedChange = { isChecked ->
-                      
+                           switchValue = isChecked;
                       }
                    )
                 }
