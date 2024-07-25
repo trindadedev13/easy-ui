@@ -8,6 +8,7 @@ on:
       - filepicker/**
       - components/**
       - components-compose/**
+      - sample/**
       - build.gradle.kts
       - gradle.properties
       - gradlew
@@ -19,6 +20,7 @@ on:
       - filepicker/**
       - components/**
       - components-compose/**
+      - sample/**
       - build.gradle.kts
       - gradle.properties
       - gradlew
