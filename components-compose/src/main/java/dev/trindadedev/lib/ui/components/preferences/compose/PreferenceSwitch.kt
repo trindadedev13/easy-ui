@@ -10,6 +10,7 @@ import androidx.compose.ui.*
 import androidx.compose.ui.res.*
 import androidx.compose.ui.unit.*
 import androidx.compose.ui.graphics.*
+import androidx.compose.ui.text.style.TextOverflow
 
 import dev.trindadedev.lib.R
 
