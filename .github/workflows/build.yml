@@ -51,20 +51,17 @@ jobs:
           arguments: assembleRelease
 
       - name: Sign APK
-        if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'
-        env:
-          KEYSTORE_FILE: ${{ secrets.KEYSTORE_FILE }}
-          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
-          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-        run: |
-          echo "${KEYSTORE_FILE}" | base64 --decode > my-release-key.keystore
-          jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore -storepass $KEYSTORE_PASSWORD -keypass $KEY_PASSWORD app/build/outputs/apk/release/app-release-unsigned.apk $KEY_ALIAS
-          $ANDROID_HOME/build-tools/29.0.2/zipalign -v 4 app/build/outputs/apk/release/app-release-unsigned.apk app/build/outputs/apk/release/app-release.apk
-
+        id: sign_apk
+        uses: noriban/sign-android-release@v3
+        with:
+          releaseDirectory: sample/build/outputs/apk/release
+          signingKeyBase64: ${{ secrets.KEYSTORE_FILE }}
+          alias: ${{ secrets.KEYSTORE_ALIAS }}
+          keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD }}
+        
       - name: Upload APK
-        if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'
         uses: actions/upload-artifact@v2
         with:
           name: release-apk
-          path: app/build/outputs/apk/release/app-release.apk
+          path: ${{steps.sign_apk.outputs.signedReleaseFile}}
