@@ -23,7 +23,7 @@ fun Preference(
 ) {
     Row(
         modifier = Modifier
-            .wrapContentWidth(),
+            .wrapContentWidth()
             .clickable(onClick = onClick)
             .padding(horizontal = 24.dp, vertical = 20.dp),
         verticalAlignment = Alignment.CenterVertically,
