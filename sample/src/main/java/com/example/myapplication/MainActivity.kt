@@ -1,14 +1,19 @@
 package com.example.myapplication
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.*
+import androidx.compose.foundation.*
+import androidx.compose.material.*
+import androidx.compose.material3.*
 import androidx.compose.runtime.*
-import androidx.compose.ui.Modifier
+import androidx.compose.ui.*
+import androidx.compose.ui.res.*
+import androidx.compose.ui.unit.*
+import androidx.compose.ui.graphics.*
+import androidx.compose.ui.text.style.TextOverflow
+
 import com.example.myapplication.ui.theme.MyComposeApplicationTheme
+
 import dev.trindadedev.lib.ui.components.preferences.compose.*
 
 class MainActivity : ComponentActivity() {
