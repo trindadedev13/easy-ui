@@ -21,12 +21,11 @@ fun PreferenceSwitch(
     isSwitchChecked: Boolean,
     onSwitchCheckedChange: (Boolean) -> Unit
 ) {
-    val selectableItemBackground = MaterialTheme.colorScheme.surfaceVariant
-
+    
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .background(selectableItemBackground, shape = MaterialTheme.shapes.small)
+            .background(shape = MaterialTheme.shapes.small)
             .padding(horizontal = 24.dp, vertical = 20.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(24.dp)

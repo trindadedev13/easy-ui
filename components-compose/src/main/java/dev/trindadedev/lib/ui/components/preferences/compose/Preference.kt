@@ -20,12 +20,11 @@ fun Preference(
     summary: String,
     onClick: () -> Unit = {}
 ) {
-    val selectableItemBackground = MaterialTheme.colorScheme.surfaceVariant
-
+    
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .background(selectableItemBackground, shape = RoundedCornerShape(4.dp))
+            .background(shape = RoundedCornerShape(4.dp))
             .clickable(onClick = onClick)
             .padding(horizontal = 24.dp, vertical = 20.dp),
         verticalAlignment = Alignment.CenterVertically,
