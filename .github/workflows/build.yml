@@ -8,7 +8,7 @@ on:
       - filepicker/**
       - components/**
       - components-compose/**
-      - sample/**
+      - sample-components/**
       - build.gradle.kts
       - gradle.properties
       - gradlew
@@ -20,7 +20,7 @@ on:
       - filepicker/**
       - components/**
       - components-compose/**
-      - sample/**
+      - sample-components/**
       - build.gradle.kts
       - gradle.properties
       - gradlew
@@ -52,11 +52,11 @@ jobs:
         with:
           arguments: assembleRelease
 
-      - name: Sign APK
-        id: sign_apk
+      - name: Sign Sample-Components APK
+        id: sign_apk_sample_components
         uses: noriban/sign-android-release@v5
         with:
-          releaseDirectory: sample/build/outputs/apk/release
+          releaseDirectory: sample-components/build/outputs/apk/release
           signingKeyBase64: ${{ secrets.KEYSTORE_FILE }}
           alias: ${{ secrets.KEYSTORE_ALIAS }}
           keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
@@ -64,8 +64,26 @@ jobs:
         env:
           BUILD_TOOLS_VERSION: "34.0.0"
         
-      - name: Upload APK
+      - name: Upload Sample-Components APK
         uses: actions/upload-artifact@v4
         with:
-          name: sample-apk
-          path: ${{steps.sign_apk.outputs.signedReleaseFile}}
+          name: sample-components-apk
+          path: ${{steps.sign_apk_sample_components.outputs.signedReleaseFile}}
+          
+      - name: Sign Sample-Components-Compose APK
+        id: sign_apk_sample_components_compose
+        uses: noriban/sign-android-release@v5
+        with:
+          releaseDirectory: sample-components-components/build/outputs/apk/release
+          signingKeyBase64: ${{ secrets.KEYSTORE_FILE }}
+          alias: ${{ secrets.KEYSTORE_ALIAS }}
+          keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD }}
+        env:
+          BUILD_TOOLS_VERSION: "34.0.0"
+        
+      - name: Upload Sample-Components-Compose APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: sample-components-compose-apk
+          path: ${{steps.sign_apk_sample_components_compose.outputs.signedReleaseFile}}    

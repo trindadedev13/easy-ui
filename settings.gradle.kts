@@ -16,7 +16,11 @@ dependencyResolutionManagement {
 
 rootProject.name = "trindade"
 
-include(":sample")
+// libs
 include(":components")
 include(":components-compose")
 include(":filepicker")
+
+// samples
+include(":sample-components")
+include(":sample-components-compose")
