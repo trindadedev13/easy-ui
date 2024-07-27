@@ -74,7 +74,7 @@ jobs:
         id: sign_apk_sample_components_compose
         uses: noriban/sign-android-release@v5
         with:
-          releaseDirectory: sample-components-components/build/outputs/apk/release
+          releaseDirectory: sample-components-compose/build/outputs/apk/release
           signingKeyBase64: ${{ secrets.KEYSTORE_FILE }}
           alias: ${{ secrets.KEYSTORE_ALIAS }}
           keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
