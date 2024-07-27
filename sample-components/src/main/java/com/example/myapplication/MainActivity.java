@@ -4,6 +4,9 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.databinding.ActivityMainBinding;
 
+import android.widget.Toast;
+
+
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
@@ -21,11 +24,11 @@ public class MainActivity extends AppCompatActivity {
         configurePreferenceSwitch(binding.prefWithIconSwitch);
     }
     
-    void configurePreferenceGroup() {
+    void configurePreferenceGroup(dev.trindadedev.lib.ui.components.preferences.PreferenceGroup pref) {
         //pref.setTitle("Title");
     }
     
-    void configurePreference(Preference pref) {
+    void configurePreference(dev.trindadedev.lib.ui.components.preferences.Preference pref) {
         // pref.setTitle("Title");
         // pref.setDescription("Description");
         // if use icon : pref.setIcon(R.drawable.your_image);
@@ -34,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     
-    void configurePreferencePopup(PreferencePopup pref) {
+    void configurePreferencePopup(dev.trindadedev.lib.ui.components.preferences.PreferencePopup pref) {
         // pref.setTitle("Title");
         // pref.setDescription("Description");
         // if use icon : pref.setIcon(R.drawable.your_image);
@@ -47,7 +50,38 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     
-    void configurePreferenceSwitch(PreferenceSwitch pref) {
+    void configurePreferenceSwitch(dev.trindadedev.lib.ui.components.preferences.PreferenceSwitch pref) {
+        // pref.setTitle("Title");
+        // pref.setDescription("Description");
+        // if use icon : pref.setIcon(R.drawable.your_image);
+        pref.setSwitchChangedListener((buttonView, isChecked) -> { 
+            // your action
+        });
+    }
+    
+    void configurePreference(dev.trindadedev.lib.ui.components.preferences.withicon.Preference pref) {
+        // pref.setTitle("Title");
+        // pref.setDescription("Description");
+        // if use icon : pref.setIcon(R.drawable.your_image);
+        pref.setOnClickListener(view -> {
+            // your action
+        });
+    }
+    
+    void configurePreferencePopup(dev.trindadedev.lib.ui.components.preferences.withicon.PreferencePopup pref) {
+        // pref.setTitle("Title");
+        // pref.setDescription("Description");
+        // if use icon : pref.setIcon(R.drawable.your_image);
+        pref.addPopupMenuItem("Item 1");
+        pref.addPopupMenuItem("Item 2");
+        pref.setMenuListener(item -> {
+            // your action, toast example:
+            Toast.makeText(this, item.getTitle().toString(), 4000).show();
+            return true;
+        });
+    }
+    
+    void configurePreferenceSwitch(dev.trindadedev.lib.ui.components.preferences.withicon.PreferenceSwitch pref) {
         // pref.setTitle("Title");
         // pref.setDescription("Description");
         // if use icon : pref.setIcon(R.drawable.your_image);
