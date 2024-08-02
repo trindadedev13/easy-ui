@@ -16,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.util.TypedValue;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+
 import dev.trindadedev.lib.R;
 import dev.trindadedev.lib.filepicker.controller.DialogSelectionListener;
 import dev.trindadedev.lib.filepicker.controller.NotifyItemChecked;
@@ -32,7 +34,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FilePickerDialog extends Dialog implements AdapterView.OnItemClickListener {
+public class FilePickerDialog extends MaterialAlertDialogBuilder implements AdapterView.OnItemClickListener {
     private Context context;
     private ListView listView;
     private TextView dname, dir_path, title;
