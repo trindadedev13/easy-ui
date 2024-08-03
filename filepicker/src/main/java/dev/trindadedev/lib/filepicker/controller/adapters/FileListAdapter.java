@@ -128,7 +128,7 @@ public class FileListAdapter extends BaseAdapter{
             }
         }
         
-        holder.fmark.setOnCheckedChangedListener(new MaterialCheckBox.OnCheckedChangeListener() {
+        holder.fmark.setOnCheckedChangeListener(new MaterialCheckBox.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(MaterialCheckBox checkbox, boolean isChecked) {
                 item.setMarked(isChecked);
