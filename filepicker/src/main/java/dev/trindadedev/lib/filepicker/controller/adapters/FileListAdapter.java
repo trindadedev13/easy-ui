@@ -76,7 +76,7 @@ public class FileListAdapter extends BaseAdapter{
             view.setAnimation(animation);
         }
         if (item.isDirectory()) {
-            holder.type_icon.setImageResource(R.mipmap.ic_type_folder);
+            holder.type_icon.setImageResource(R.drawable.ic_type_folder);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 holder.type_icon.setColorFilter(getColor(R.attr.colorPrimary));
             }
@@ -91,7 +91,7 @@ public class FileListAdapter extends BaseAdapter{
             }
         }
         else {
-            holder.type_icon.setImageResource(R.mipmap.ic_type_file);
+            holder.type_icon.setImageResource(R.drawable.ic_type_file);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 holder.type_icon.setColorFilter(getColor(R.attr.colorPrimary));
             }
