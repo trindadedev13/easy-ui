@@ -28,37 +28,35 @@
             android:background="@null">
 
             <TextView
-                android:id="@+id/dname"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:id="@+id/dname"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:background="@null"
                 android:textColor="?attr/colorPrimary"/>
 
             <TextView
-                android:id="@+id/title"
-                android:visibility="invisible"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:id="@+id/title"
+                android:visibility="invisible"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:background="@null"
-                />
+                android:background="@null" />
 
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/dir_path"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
-            android:background="@null"
-            />
+            android:id="@+id/dir_path"
+            android:background="@null" />
     </LinearLayout>
 </LinearLayout>

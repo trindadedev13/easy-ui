@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/content" >
+
+    <!-- Normal preferences -->
+    <dev.trindadedev.lib.ui.components.preferences.PreferenceGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pref_group"
+        app:preferenceGroupTitle="Settings" >
+        
+        <dev.trindadedev.lib.ui.components.preferences.Preference 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pref"
+            app:preferenceTitle="Preference title"
+            app:preferenceDescription="Preference description" />
+            
+        <dev.trindadedev.lib.ui.components.preferences.PreferencePopup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pref_popup"
+            app:preferencePopupTitle="Preference title"
+            app:preferencePopupDescription="Preference description" />
+            
+        <dev.trindadedev.lib.ui.components.preferences.PreferenceSwitch
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pref_switch"
+            app:preferenceSwitchTitle="Preference title"
+            app:preferenceSwitchDescription="Preference description"
+            app:preferenceSwitchDefaultValue="false" />
+            
+    </dev.trindadedev.lib.ui.components.preferences.PreferenceGroup>
+    <!-- end -->
+
+    <!-- With icon preferences -->
+    <dev.trindadedev.lib.ui.components.preferences.PreferenceGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pref_with_icon_group"
+        app:preferenceGroupTitle="Settings with icon" >
+        
+        <dev.trindadedev.lib.ui.components.preferences.withicon.Preference 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pref_with_icon"
+            app:preferenceTitle="Preference with icon title"
+            app:preferenceDescription="Preference with icon description" />
+            
+        <dev.trindadedev.lib.ui.components.preferences.withicon.PreferencePopup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pref_with_icon_popup"
+            app:preferencePopupTitle="Preference with icon title"
+            app:preferencePopupDescription="Preference with icon description" />
+            
+        <dev.trindadedev.lib.ui.components.preferences.withicon.PreferenceSwitch
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pref_with_icon_switch"
+            app:preferenceSwitchTitle="Preference with icon title"
+            app:preferenceSwitchDescription="Preference with icon description"
+            app:preferenceSwitchDefaultValue="false" />
+            
+    </dev.trindadedev.lib.ui.components.preferences.PreferenceGroup>
+    <!-- end -->
+    
+</LinearLayout>
