@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.util.TypedValue; 
+import android.widget.CompoundButton;
 
 import com.google.android.material.checkbox.MaterialCheckBox;
 
@@ -128,9 +129,9 @@ public class FileListAdapter extends BaseAdapter{
             }
         }
         
-        holder.fmark.setOnCheckedChangeListener(new MaterialCheckBox.OnCheckedStateChangedListener() {
+        holder.fmark.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedStateChangedListener(MaterialCheckBox checkbox, boolean isChecked) {
+            public void onCheckedChanged(CompoundButton checkbox, boolean isChecked) {
                 item.setMarked(isChecked);
                 if (item.isMarked()) {
                     if(properties.selection_mode == DialogConfigs.MULTI_MODE) {
