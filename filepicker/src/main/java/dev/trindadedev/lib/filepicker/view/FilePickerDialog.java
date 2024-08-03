@@ -90,7 +90,6 @@ public class FilePickerDialog extends Dialog implements AdapterView.OnItemClickL
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.dialog_main);
         listView = (ListView) findViewById(R.id.fileList);
-        getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         getWindow().getDecorView().setBackgroundColor(0);
         select = (Button) findViewById(R.id.select);
         int size = MarkedItemList.getFileCount();
