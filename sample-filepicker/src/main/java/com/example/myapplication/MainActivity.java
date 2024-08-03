@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.showFp.setOnClickListener(v -> {
+        binding.showDialog.setOnClickListener(v -> {
              showFilePicker();
         });
     }
