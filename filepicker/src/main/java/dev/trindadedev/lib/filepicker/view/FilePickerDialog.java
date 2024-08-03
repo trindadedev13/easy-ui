@@ -16,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.util.TypedValue;
 
+import com.google.android.material.checkbox.MaterialCheckBox;
+
 import dev.trindadedev.lib.R;
 import dev.trindadedev.lib.filepicker.controller.DialogSelectionListener;
 import dev.trindadedev.lib.filepicker.controller.NotifyItemChecked;
@@ -26,7 +28,6 @@ import dev.trindadedev.lib.filepicker.model.FileListItem;
 import dev.trindadedev.lib.filepicker.model.MarkedItemList;
 import dev.trindadedev.lib.filepicker.utils.ExtensionFilter;
 import dev.trindadedev.lib.filepicker.utils.Utility;
-import dev.trindadedev.lib.filepicker.widget.MaterialCheckbox;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -265,7 +266,7 @@ public class FilePickerDialog extends Dialog implements AdapterView.OnItemClickL
                     Toast.makeText(context, R.string.error_dir_access, Toast.LENGTH_SHORT).show();
                 }
             } else {
-                MaterialCheckbox fmark = (MaterialCheckbox) view.findViewById(R.id.file_mark);
+                MaterialCheckBox fmark = (MaterialCheckBox) view.findViewById(R.id.file_mark);
                 fmark.performClick();
             }
         }

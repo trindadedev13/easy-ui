@@ -53,7 +53,7 @@
             android:textSize="12sp" />
     </LinearLayout>
 
-    <dev.trindadedev.lib.filepicker.widget.MaterialCheckbox
+    <CheckBox
         android:id="@+id/file_mark"
         android:layout_width="@dimen/checkbox_dimens"
         android:layout_height="@dimen/checkbox_dimens"
