@@ -24,3 +24,4 @@ include(":filepicker")
 // samples
 include(":sample-components")
 include(":sample-components-compose")
+include(":sample-filepicker")
