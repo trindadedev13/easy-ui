@@ -21,7 +21,6 @@ import dev.trindadedev.lib.filepicker.model.DialogConfigs;
 import dev.trindadedev.lib.filepicker.model.DialogProperties;
 import dev.trindadedev.lib.filepicker.model.FileListItem;
 import dev.trindadedev.lib.filepicker.model.MarkedItemList;
-import dev.trindadedev.lib.filepicker.widget.OnCheckedChangeListener;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -129,7 +128,7 @@ public class FileListAdapter extends BaseAdapter{
             }
         }
         
-        holder.fmark.setOnCheckedChangedListener(new OnCheckedChangeListener() {
+        holder.fmark.setOnCheckedChangedListener(new MaterialCheckBox.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(MaterialCheckBox checkbox, boolean isChecked) {
                 item.setMarked(isChecked);
