@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     void showFilePicker() {
         DialogProperties properties = new DialogProperties();
+        properties.roor = new File("/sdcard/");
         properties.selection_mode = DialogConfigs.MULTI_MODE;
         properties.selection_type = DialogConfigs.FILE_SELECT; 
         properties.extensions = new String[]{".java"};
