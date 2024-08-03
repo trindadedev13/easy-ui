@@ -3,6 +3,8 @@ package com.example.myapplication;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import java.io.File;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import dev.trindadedev.lib.filepicker.model.DialogConfigs;
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     void showFilePicker() {
         DialogProperties properties = new DialogProperties();
-        properties.roor = new File("/sdcard/");
+        properties.root = new File("/sdcard/");
         properties.selection_mode = DialogConfigs.MULTI_MODE;
         properties.selection_type = DialogConfigs.FILE_SELECT; 
         properties.extensions = new String[]{".java"};
