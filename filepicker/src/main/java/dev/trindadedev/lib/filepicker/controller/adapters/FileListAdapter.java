@@ -13,13 +13,14 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.util.TypedValue; 
 
+import com.google.android.material.checkbox.MaterialCheckBox;
+
 import dev.trindadedev.lib.R;
 import dev.trindadedev.lib.filepicker.controller.NotifyItemChecked;
 import dev.trindadedev.lib.filepicker.model.DialogConfigs;
 import dev.trindadedev.lib.filepicker.model.DialogProperties;
 import dev.trindadedev.lib.filepicker.model.FileListItem;
 import dev.trindadedev.lib.filepicker.model.MarkedItemList;
-import dev.trindadedev.lib.filepicker.widget.MaterialCheckbox;
 import dev.trindadedev.lib.filepicker.widget.OnCheckedChangeListener;
 
 import java.text.SimpleDateFormat;
@@ -130,7 +131,7 @@ public class FileListAdapter extends BaseAdapter{
         
         holder.fmark.setOnCheckedChangedListener(new OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(MaterialCheckbox checkbox, boolean isChecked) {
+            public void onCheckedChanged(MaterialCheckBox checkbox, boolean isChecked) {
                 item.setMarked(isChecked);
                 if (item.isMarked()) {
                     if(properties.selection_mode == DialogConfigs.MULTI_MODE) {
@@ -162,13 +163,13 @@ public class FileListAdapter extends BaseAdapter{
     private class ViewHolder
     {   ImageView type_icon;
         TextView name,type;
-        MaterialCheckbox fmark;
+        MaterialCheckBox fmark;
 
         ViewHolder(View itemView) {
             name=(TextView)itemView.findViewById(R.id.fname);
             type=(TextView)itemView.findViewById(R.id.ftype);
             type_icon=(ImageView)itemView.findViewById(R.id.image_type);
-            fmark=(MaterialCheckbox) itemView.findViewById(R.id.file_mark);
+            fmark=(MaterialCheckBox) itemView.findViewById(R.id.file_mark);
         }
     }
 
