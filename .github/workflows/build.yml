@@ -91,3 +91,21 @@ jobs:
         with:
           name: sample-components-compose-apk
           path: ${{steps.sign_apk_sample_components_compose.outputs.signedReleaseFile}}    
+
+      - name: Sign Sample-FilePicker APK
+        id: sign_apk_sample_filepicker
+        uses: noriban/sign-android-release@v5
+        with:
+          releaseDirectory: sample-filepicker/build/outputs/apk/release
+          signingKeyBase64: ${{ secrets.KEYSTORE_FILE }}
+          alias: ${{ secrets.KEYSTORE_ALIAS }}
+          keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD }}
+        env:
+          BUILD_TOOLS_VERSION: "34.0.0"
+
+      - name: Upload Sample-FilePicker APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: sample-filepicker-apk
+          path: ${{steps.sign_apk_sample_filepicker.outputs.signedReleaseFile}}
