@@ -26,12 +26,12 @@ public class MainActivity extends AppCompatActivity {
 
     void showFilePicker() {
         DialogProperties properties = new DialogProperties();
-        properties.selection_mode = DialogConfigs.MULTI_MODE; // or SINGLE_MODE for single selection
-        properties.selection_type = DialogConfigs.FILE_SELECT; // or FOLDER_SELECT for folder selection
-        properties.extensions = new String[]{BackupFactory.EXTENSION}; // specify allowed extensions if needed
+        properties.selection_mode = DialogConfigs.MULTI_MODE;
+        properties.selection_type = DialogConfigs.FILE_SELECT; 
+        properties.extensions = new String[]{".java"};
 
         FilePickerDialog filePickerDialog = new FilePickerDialog(this, properties);
-        filePickerDialog.setTitle("Select backups to restore (" + BackupFactory.EXTENSION + ")");
+        filePickerDialog.setTitle("Select file");
         filePickerDialog.setDialogSelectionListener(files -> {
             if (files != null && files.length > 0) {
                 StringBuilder fileNames = new StringBuilder();

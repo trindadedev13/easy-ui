@@ -51,5 +51,5 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach 
 dependencies {
       implementation("androidx.appcompat:appcompat:1.7.0-alpha03")
       implementation("com.google.android.material:material:1.13.0-alpha04")
-      implementation(project(":components"))
+      implementation(project(":filepicker"))
 }
