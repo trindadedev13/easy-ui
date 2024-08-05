@@ -24,11 +24,11 @@ public class MainActivity extends AppCompatActivity {
         configurePreferenceSwitch(binding.prefWithIconSwitch);
     }
     
-    void configurePreferenceGroup(dev.trindadedev.lib.ui.components.preferences.PreferenceGroup pref) {
+    void configurePreferenceGroup(dev.trindadedev.lib.ui.components.preference.PreferenceGroup pref) {
         //pref.setTitle("Title");
     }
     
-    void configurePreference(dev.trindadedev.lib.ui.components.preferences.Preference pref) {
+    void configurePreference(dev.trindadedev.lib.ui.components.preference.Preference pref) {
         // pref.setTitle("Title");
         // pref.setDescription("Description");
         // if use icon : pref.setIcon(R.drawable.your_image);
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     
-    void configurePreferencePopup(dev.trindadedev.lib.ui.components.preferences.PreferencePopup pref) {
+    void configurePreferencePopup(dev.trindadedev.lib.ui.components.preference.PreferencePopup pref) {
         // pref.setTitle("Title");
         // pref.setDescription("Description");
         // if use icon : pref.setIcon(R.drawable.your_image);
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     
-    void configurePreferenceSwitch(dev.trindadedev.lib.ui.components.preferences.PreferenceSwitch pref) {
+    void configurePreferenceSwitch(dev.trindadedev.lib.ui.components.preference.PreferenceSwitch pref) {
         // pref.setTitle("Title");
         // pref.setDescription("Description");
         // if use icon : pref.setIcon(R.drawable.your_image);
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     
-    void configurePreference(dev.trindadedev.lib.ui.components.preferences.withicon.Preference pref) {
+    void configurePreference(dev.trindadedev.lib.ui.components.preference.withicon.Preference pref) {
         // pref.setTitle("Title");
         // pref.setDescription("Description");
         // if use icon : pref.setIcon(R.drawable.your_image);
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     
-    void configurePreferencePopup(dev.trindadedev.lib.ui.components.preferences.withicon.PreferencePopup pref) {
+    void configurePreferencePopup(dev.trindadedev.lib.ui.components.preference.withicon.PreferencePopup pref) {
         // pref.setTitle("Title");
         // pref.setDescription("Description");
         // if use icon : pref.setIcon(R.drawable.your_image);
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     
-    void configurePreferenceSwitch(dev.trindadedev.lib.ui.components.preferences.withicon.PreferenceSwitch pref) {
+    void configurePreferenceSwitch(dev.trindadedev.lib.ui.components.preference.withicon.PreferenceSwitch pref) {
         // pref.setTitle("Title");
         // pref.setDescription("Description");
         // if use icon : pref.setIcon(R.drawable.your_image);
