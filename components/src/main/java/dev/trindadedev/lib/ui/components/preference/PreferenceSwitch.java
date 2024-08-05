@@ -1,4 +1,4 @@
-package dev.trindadedev.lib.ui.components.preferences;
+package dev.trindadedev.lib.ui.components.preference;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -9,7 +9,7 @@ import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import dev.trindadedev.lib.R;
+import dev.trindadedev.lib.ui.components.R;
 
 import com.google.android.material.materialswitch.MaterialSwitch;
 

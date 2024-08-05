@@ -1,4 +1,4 @@
-package dev.trindadedev.lib.ui.components.textfields
+package dev.trindadedev.lib.ui.components.textfield
 
 import android.content.Context
 import android.util.AttributeSet
@@ -9,7 +9,7 @@ import android.text.TextUtils
 import androidx.core.content.ContextCompat
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-import dev.trindadedev.lib.R
+import dev.trindadedev.lib.ui.components.R
 
 class TInput @JvmOverloads constructor(
     context: Context,

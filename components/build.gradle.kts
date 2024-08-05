@@ -7,10 +7,10 @@ plugins {
     id("maven-publish")
 }
 
-group = "dev.trindadedev.lib"
+group = "dev.trindadedev.lib.ui.components"
 
 android {
-    namespace = "dev.trindadedev.lib"
+    namespace = "dev.trindadedev.lib.ui.components"
     compileSdk = 34
     
     defaultConfig {

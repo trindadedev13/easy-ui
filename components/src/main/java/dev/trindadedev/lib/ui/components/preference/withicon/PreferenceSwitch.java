@@ -1,4 +1,4 @@
-package dev.trindadedev.lib.ui.components.preferences.withicon;
+package dev.trindadedev.lib.ui.components.preference.withicon;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -14,7 +14,7 @@ import androidx.annotation.DrawableRes;
 
 import com.google.android.material.materialswitch.MaterialSwitch;
 
-import dev.trindadedev.lib.R;
+import dev.trindadedev.lib.ui.components.R;
 
 public class PreferenceSwitch extends RelativeLayout implements View.OnClickListener {
 

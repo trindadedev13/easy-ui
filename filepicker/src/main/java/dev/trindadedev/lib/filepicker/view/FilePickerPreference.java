@@ -9,7 +9,7 @@ import android.preference.Preference;
 import android.util.AttributeSet;
 import android.view.View;
 
-import dev.trindadedev.lib.R;
+import dev.trindadedev.lib.filepicker.R;
 import dev.trindadedev.lib.filepicker.controller.DialogSelectionListener;
 import dev.trindadedev.lib.filepicker.model.DialogConfigs;
 import dev.trindadedev.lib.filepicker.model.DialogProperties;

@@ -18,7 +18,7 @@ import android.util.TypedValue;
 
 import com.google.android.material.checkbox.MaterialCheckBox;
 
-import dev.trindadedev.lib.R;
+import dev.trindadedev.lib.filepicker.R;
 import dev.trindadedev.lib.filepicker.controller.DialogSelectionListener;
 import dev.trindadedev.lib.filepicker.controller.NotifyItemChecked;
 import dev.trindadedev.lib.filepicker.controller.adapters.FileListAdapter;

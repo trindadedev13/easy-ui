@@ -7,10 +7,10 @@ plugins {
     id("maven-publish")
 }
 
-group = "dev.trindadedev.lib"
+group = "dev.trindadedev.lib.filepicker"
 
 android {
-    namespace = "dev.trindadedev.lib"
+    namespace = "dev.trindadedev.lib.filepicker"
     compileSdk = 34
     
     defaultConfig {

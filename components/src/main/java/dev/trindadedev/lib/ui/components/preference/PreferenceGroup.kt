@@ -1,4 +1,4 @@
-package dev.trindadedev.lib.ui.components.preferences
+package dev.trindadedev.lib.ui.components.preference
 
 import android.content.Context
 import android.util.AttributeSet
@@ -7,7 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import dev.trindadedev.lib.R
+
+import dev.trindadedev.lib.ui.components.R
 
 class PreferenceGroup @JvmOverloads constructor(
     context: Context,

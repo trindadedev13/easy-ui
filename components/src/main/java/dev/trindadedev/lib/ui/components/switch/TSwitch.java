@@ -1,10 +1,10 @@
-package dev.trindadedev.lib.ui.components.switchs;
+package dev.trindadedev.lib.ui.components.switch;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import androidx.appcompat.widget.SwitchCompat;
 
-import dev.trindadedev.lib.R;
+import dev.trindadedev.lib.ui.components.R;
 
 public class TSwitch extends SwitchCompat {
 
