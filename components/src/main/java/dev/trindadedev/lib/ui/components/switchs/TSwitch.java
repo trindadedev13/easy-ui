@@ -1,4 +1,4 @@
-package dev.trindadedev.lib.ui.components.switch;
+package dev.trindadedev.lib.ui.components.switchs;
 
 import android.content.Context;
 import android.util.AttributeSet;
