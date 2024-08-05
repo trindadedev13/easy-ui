@@ -408,7 +408,7 @@ public class FilePickerDialog extends Dialog implements AdapterView.OnItemClickL
         }
     }
     
-    private void requestStoragePermission() {
+    public void requestStoragePermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             ((Activity) context).requestPermissions(
                   new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 
