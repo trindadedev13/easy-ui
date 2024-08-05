@@ -417,7 +417,7 @@ public class FilePickerDialog extends Dialog implements AdapterView.OnItemClickL
         }
     }
     
-    private void showDialogW() {
+    public void showDialogW() {
         super.show();
          positiveBtnNameStr = positiveBtnNameStr == null ?
                context.getResources().getString(R.string.choose_button_label) : positiveBtnNameStr;
