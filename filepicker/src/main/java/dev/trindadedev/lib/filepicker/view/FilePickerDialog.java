@@ -402,24 +402,36 @@ public class FilePickerDialog extends Dialog implements AdapterView.OnItemClickL
     @Override
     public void show() {
         if (!Utility.checkStorageAccessPermissions(context)) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                ((Activity) context).requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, EXTERNAL_READ_PERMISSION_GRANT);
-            }
+             requestStoragePermission();
         } else {
-            super.show();
-            positiveBtnNameStr = positiveBtnNameStr == null ?
-                    context.getResources().getString(R.string.choose_button_label) : positiveBtnNameStr;
-            select.setText(positiveBtnNameStr);
-            int size = MarkedItemList.getFileCount();
-            if (size == 0) {
-                select.setText(positiveBtnNameStr);
-            } else {
-                String button_label = positiveBtnNameStr + " (" + size + ") ";
-                select.setText(button_label);
-            }
+            showDialogW();
         }
     }
+    
+    private void requestStoragePermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            ((Activity) context).requestPermissions(
+                  new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 
+                  EXTERNAL_READ_PERMISSION_GRANT
+            );
+        }
+    }
+    
+    private void showDialogW() {
+        super.show();
+         positiveBtnNameStr = positiveBtnNameStr == null ?
+               context.getResources().getString(R.string.choose_button_label) : positiveBtnNameStr;
+         select.setText(positiveBtnNameStr);
+         int size = MarkedItemList.getFileCount();
+         if (size == 0) {
+             select.setText(positiveBtnNameStr);
+         } else {
+             String button_label = positiveBtnNameStr + " (" + size + ") ";
+             select.setText(button_label);
+         }
+    }
 
+    
     @Override
     public void onBackPressed() {
         //currentDirName is dependent on dname
