@@ -17,8 +17,8 @@ class TInput @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
-    val textInputLayout: TextInputLayout
-    val textInputEditText: TextInputEditText
+    public val textInputLayout: TextInputLayout
+    public val textInputEditText: TextInputEditText
 
     init {
         val view = LayoutInflater.from(context).inflate(R.layout.layout_tinput_textfield, this, true)
