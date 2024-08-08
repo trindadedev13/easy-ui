@@ -1,6 +1,7 @@
 package dev.trindadedev.lib.ui.components.textfield;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
