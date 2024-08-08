@@ -15,17 +15,17 @@ import dev.trindadedev.lib.ui.components.R;
 
 public class PermissionDialog extends Dialog {
 
-    private ImageView dialogIcon;
-    private TextView dialogText;
-    private LinearLayout buttonAllow;
-    private LinearLayout buttonDeny;
+    public ImageView dialogIcon;
+    public TextView dialogText;
+    public LinearLayout buttonAllow;
+    public LinearLayout buttonDeny;
 
-    private int iconResId;
-    private String text;
-    private View.OnClickListener allowClickListener;
-    private View.OnClickListener denyClickListener;
+    public int iconResId;
+    public String text;
+    public View.OnClickListener allowClickListener;
+    public View.OnClickListener denyClickListener;
 
-    private PermissionDialog(Context context, Builder builder) {
+    public PermissionDialog(Context context, Builder builder) {
         super(context);
         this.iconResId = builder.iconResId;
         this.text = builder.text;
@@ -67,11 +67,11 @@ public class PermissionDialog extends Dialog {
     }
 
     public static class Builder {
-        private final Context context;
-        private int iconResId = R.drawable.ic_dot_24;
-        private String text = "Default text";
-        private View.OnClickListener allowClickListener;
-        private View.OnClickListener denyClickListener;
+        public final Context context;
+        public int iconResId = R.drawable.ic_dot_24;
+        public String text = "Default text";
+        public View.OnClickListener allowClickListener;
+        public View.OnClickListener denyClickListener;
 
         public Builder(Context context) {
             this.context = context;

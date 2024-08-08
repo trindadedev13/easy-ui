@@ -16,9 +16,9 @@ class PreferenceGroup @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
-    private val preferenceGroupTitle: TextView
-    private val preferenceGroupContent: LinearLayout
-    private val preferenceGroup: View
+    public val preferenceGroupTitle: TextView
+    public val preferenceGroupContent: LinearLayout
+    public val preferenceGroup: View
 
     init {
         LayoutInflater.from(context).inflate(R.layout.layout_preference_group, this, true)

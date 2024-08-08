@@ -15,10 +15,10 @@ import com.google.android.material.materialswitch.MaterialSwitch;
 
 public class PreferenceSwitch extends RelativeLayout implements View.OnClickListener {
 
-    private boolean value = false;
-    private TextView preferenceName;
-    private TextView preferenceDescription;
-    private MaterialSwitch preferenceSwitch;
+    public boolean value = false;
+    public TextView preferenceName;
+    public TextView preferenceDescription;
+    public MaterialSwitch preferenceSwitch;
 
     public PreferenceSwitch(Context context) {
         super(context);
@@ -35,7 +35,7 @@ public class PreferenceSwitch extends RelativeLayout implements View.OnClickList
         initialize(context, attrs);
     }
 
-    private void initialize(Context context, AttributeSet attrs) {
+    public void initialize(Context context, AttributeSet attrs) {
         LayoutInflater.from(context).inflate(R.layout.layout_preference_switch, this, true);
 
         preferenceName = findViewById(R.id.preference_name);

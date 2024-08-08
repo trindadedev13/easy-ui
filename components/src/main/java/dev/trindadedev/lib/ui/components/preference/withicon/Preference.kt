@@ -18,10 +18,10 @@ class Preference @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
-    private val preferenceTitle: TextView
-    private val preferenceDescription: TextView
-    private val preferenceIcon: ImageView
-    private val preference: View
+    public val preferenceTitle: TextView
+    public val preferenceDescription: TextView
+    public val preferenceIcon: ImageView
+    public val preference: View
 
     init {
         LayoutInflater.from(context).inflate(R.layout.layout_preference_withicon, this, true)

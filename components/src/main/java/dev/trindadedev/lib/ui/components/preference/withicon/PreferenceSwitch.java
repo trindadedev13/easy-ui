@@ -18,11 +18,11 @@ import dev.trindadedev.lib.ui.components.R;
 
 public class PreferenceSwitch extends RelativeLayout implements View.OnClickListener {
 
-    private boolean value = false;
-    private TextView preferenceName;
-    private TextView preferenceDescription;
-    private MaterialSwitch preferenceSwitch;
-    private ImageView preferenceIcon;
+    public boolean value = false;
+    public TextView preferenceName;
+    public TextView preferenceDescription;
+    public MaterialSwitch preferenceSwitch;
+    public ImageView preferenceIcon;
 
     public PreferenceSwitch(Context context) {
         super(context);
@@ -39,7 +39,7 @@ public class PreferenceSwitch extends RelativeLayout implements View.OnClickList
         initialize(context, attrs);
     }
 
-    private void initialize(Context context, AttributeSet attrs) {
+    public void initialize(Context context, AttributeSet attrs) {
         LayoutInflater.from(context).inflate(R.layout.layout_preference_switch_withicon, this, true);
 
         preferenceName = findViewById(R.id.preference_name);
