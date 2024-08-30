@@ -3,9 +3,9 @@ name: Build LIB
 on:
   workflow_dispatch:
   push:
-    branches: ["main"]
+    branches: ["release"]
   pull_request:
-    branches: ["main"]
+    branches: ["release"]
 
 jobs:
   build:
