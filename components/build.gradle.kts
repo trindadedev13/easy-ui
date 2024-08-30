@@ -7,10 +7,10 @@ plugins {
     id("maven-publish")
 }
 
-group = "dev.trindadedev.lib.ui.components"
+group = "dev.trindadedev.easyui.components"
 
 android {
-    namespace = "dev.trindadedev.lib.ui.components"
+    namespace = "dev.trindadedev.easyui.components"
     compileSdk = 34
     
     defaultConfig {
@@ -29,17 +29,17 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_18
+        targetCompatibility = JavaVersion.VERSION_18
     }
     
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = "18"
     }
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    kotlinOptions.jvmTarget = "17"
+    kotlinOptions.jvmTarget = "18"
 }
 
 dependencies {
@@ -51,9 +51,9 @@ dependencies {
 publishing {
     publications {
         register<MavenPublication>("release") {
-            groupId = "com.github.aquilestrindade"
+            groupId = "com.github.trindadedev13"
             artifactId = "components"
-            version = "3.0.6"
+            version = "1.0.0"
 
             afterEvaluate {
                 from(components["release"])

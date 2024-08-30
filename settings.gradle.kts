@@ -14,14 +14,9 @@ dependencyResolutionManagement {
   }
 }
 
-rootProject.name = "trindade"
+rootProject.name = "easy-ui"
 
 // libs
 include(":components")
 include(":components-compose")
 include(":filepicker")
-
-// samples
-include(":sample-components")
-include(":sample-components-compose")
-include(":sample-filepicker")

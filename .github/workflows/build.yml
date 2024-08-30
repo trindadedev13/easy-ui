@@ -3,33 +3,9 @@ name: Build LIB
 on:
   workflow_dispatch:
   push:
-    paths:
-      - .github/workflows/build.yml
-      - filepicker/**
-      - components/**
-      - components-compose/**
-      - sample-components/**
-      - sample-components-compose/**
-      - sample-filepicker/**
-      - build.gradle.kts
-      - gradle.properties
-      - gradlew
-      - gradlew.bat
-      - settings.gradle.kts
+    branches: ["main"]
   pull_request:
-    paths:
-      - .github/workflows/build.yml
-      - filepicker/**
-      - components/**
-      - components-compose/**
-      - sample-components/**
-      - sample-components-compose/**
-      - sample-filepicker/**
-      - build.gradle.kts
-      - gradle.properties
-      - gradlew
-      - gradlew.bat
-      - settings.gradle.kts
+    branches: ["main"]
 
 jobs:
   build:
@@ -38,11 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4.1.7
 
-      - name: Set up JDK 17
+      - name: Set up JDK 22
         uses: actions/setup-java@v4.2.2
         with:
-          java-version: '17'
-          distribution: 'adopt'
+          java-version: '22'
+          distribution: 'oracle'
           cache: gradle
 
       - name: Grant execute permission for gradlew
@@ -55,57 +31,3 @@ jobs:
         uses: gradle/gradle-build-action@v3
         with:
           arguments: assembleRelease
-
-      - name: Sign Sample-Components APK
-        id: sign_apk_sample_components
-        uses: noriban/sign-android-release@v5
-        with:
-          releaseDirectory: sample-components/build/outputs/apk/release
-          signingKeyBase64: ${{ secrets.KEYSTORE_FILE }}
-          alias: ${{ secrets.KEYSTORE_ALIAS }}
-          keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
-        env:
-          BUILD_TOOLS_VERSION: "34.0.0"
-        
-      - name: Upload Sample-Components APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: sample-components-apk
-          path: ${{steps.sign_apk_sample_components.outputs.signedReleaseFile}}
-          
-      - name: Sign Sample-Components-Compose APK
-        id: sign_apk_sample_components_compose
-        uses: noriban/sign-android-release@v5
-        with:
-          releaseDirectory: sample-components-compose/build/outputs/apk/release
-          signingKeyBase64: ${{ secrets.KEYSTORE_FILE }}
-          alias: ${{ secrets.KEYSTORE_ALIAS }}
-          keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
-        env:
-          BUILD_TOOLS_VERSION: "34.0.0"
-        
-      - name: Upload Sample-Components-Compose APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: sample-components-compose-apk
-          path: ${{steps.sign_apk_sample_components_compose.outputs.signedReleaseFile}}    
-
-      - name: Sign Sample-FilePicker APK
-        id: sign_apk_sample_filepicker
-        uses: noriban/sign-android-release@v5
-        with:
-          releaseDirectory: sample-filepicker/build/outputs/apk/release
-          signingKeyBase64: ${{ secrets.KEYSTORE_FILE }}
-          alias: ${{ secrets.KEYSTORE_ALIAS }}
-          keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
-        env:
-          BUILD_TOOLS_VERSION: "34.0.0"
-
-      - name: Upload Sample-FilePicker APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: sample-filepicker-apk
-          path: ${{steps.sign_apk_sample_filepicker.outputs.signedReleaseFile}}

@@ -18,10 +18,6 @@
 # Gradle files
 .gradle/
 /build/
-<<<<<<< HEAD
-=======
-/.androidide/
->>>>>>> b0b89c3 (MercadoPago api add)
 
 # Local configuration file (sdk path, etc)
 local.properties
