@@ -1,4 +1,3 @@
-
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -7,12 +6,10 @@ plugins {
     id("maven-publish")
 }
 
-group = "dev.trindadedev.easyui.components"
-
 android {
     namespace = "dev.trindadedev.easyui.components"
     compileSdk = 34
-    
+
     defaultConfig {
         minSdk = 21
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -29,17 +26,17 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_18
-        targetCompatibility = JavaVersion.VERSION_18
+        sourceCompatibility = JavaVersion.VERSION_17 // Usar a versão 17 pode ser mais seguro
+        targetCompatibility = JavaVersion.VERSION_17
     }
-    
+
     kotlinOptions {
-        jvmTarget = "18"
+        jvmTarget = "17" // Ajuste para corresponder à compatibilidade Java
     }
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    kotlinOptions.jvmTarget = "18"
+    kotlinOptions.jvmTarget = "17" // Ajuste para corresponder à compatibilidade Java
 }
 
 dependencies {
@@ -50,13 +47,29 @@ dependencies {
 
 publishing {
     publications {
-        register<MavenPublication>("release") {
-            groupId = "com.github.trindadedev13"
+        create<MavenPublication>("mavenJava") {
+            groupId = "dev.trindadedev.easyui.components"
             artifactId = "components"
-            version = "1.0.0"
+            version = "0.0.1"
 
-            afterEvaluate {
-                from(components["release"])
+            from(components["release"]) 
+            pom {
+                name.set("Easy UI")
+                description.set("A simple Library to help you with your Project's UI.")
+                url.set("https://github.com/trindadev13/easy-ui")
+                licenses {
+                    license {
+                        name.set("GPL 3.0 License")
+                        url.set("https://www.gnu.org/licenses/gpl-3.0.pt-br.html")
+                    }
+                }
+                developers {
+                    developer {
+                        id.set("trindadedev13")
+                        name.set("Aquiles Trindade")
+                        email.set("devsuay@example.com")
+                    }
+                }
             }
         }
     }

@@ -7,8 +7,6 @@ plugins {
     id("maven-publish")
 }
 
-group = "dev.trindadedev.easyui.filepicker"
-
 android {
     namespace = "dev.trindadedev.easyui.filepicker"
     compileSdk = 34
@@ -50,13 +48,29 @@ dependencies {
 
 publishing {
     publications {
-        register<MavenPublication>("release") {
-            groupId = "com.github.trindadedev13"
-            artifactId = "filepicker"
-            version = "1.0.0"
+        create<MavenPublication>("mavenJava") {
+            groupId = "dev.trindadedev.easyui.filepicker"
+            artifactId = "components"
+            version = "0.0.1"
 
-            afterEvaluate {
-                from(components["release"])
+            from(components["release"]) 
+            pom {
+                name.set("Easy UI")
+                description.set("A simple Library to help you with your Project's UI.")
+                url.set("https://github.com/trindadev13/easy-ui")
+                licenses {
+                    license {
+                        name.set("GPL 3.0 License")
+                        url.set("https://www.gnu.org/licenses/gpl-3.0.pt-br.html")
+                    }
+                }
+                developers {
+                    developer {
+                        id.set("trindadedev13")
+                        name.set("Aquiles Trindade")
+                        email.set("devsuay@example.com")
+                    }
+                }
             }
         }
     }

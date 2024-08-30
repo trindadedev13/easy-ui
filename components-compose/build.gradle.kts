@@ -7,8 +7,6 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
-group = "dev.trindadedev.easyui.components.compose"
-
 android {
     namespace = "dev.trindadedev.easyui.components.compose"
     compileSdk = 34
@@ -71,13 +69,29 @@ dependencies {
 
 publishing {
     publications {
-        register<MavenPublication>("release") {
-            groupId = "com.github.trindadedev13"
+        create<MavenPublication>("mavenJava") {
+            groupId = "dev.trindadedev.easyui.components.compose"
             artifactId = "components-compose"
-            version = "1.0.0"
+            version = "0.0.1"
 
-            afterEvaluate {
-                from(components["release"])
+            from(components["release"]) 
+            pom {
+                name.set("Easy UI")
+                description.set("A simple Library to help you with your Project's UI.")
+                url.set("https://github.com/trindadev13/easy-ui")
+                licenses {
+                    license {
+                        name.set("GPL 3.0 License")
+                        url.set("https://www.gnu.org/licenses/gpl-3.0.pt-br.html")
+                    }
+                }
+                developers {
+                    developer {
+                        id.set("trindadedev13")
+                        name.set("Aquiles Trindade")
+                        email.set("devsuay@example.com")
+                    }
+                }
             }
         }
     }
