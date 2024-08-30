@@ -49,14 +49,15 @@ dependencies {
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {
-            groupId = "dev.trindadedev.easyui.filepicker"
+            groupId = "dev.trindadedev.easyui.components"
             artifactId = "components"
             version = "0.0.1"
 
-            from(components["release"]) 
+            from(components.findByName("release") ?: components["java"])
+
             pom {
-                name.set("Easy UI")
-                description.set("A simple Library to help you with your Project's UI.")
+                name.set("Easy UI FilePicker")
+                description.set("FilePicker redesign by angads")
                 url.set("https://github.com/trindadev13/easy-ui")
                 licenses {
                     license {

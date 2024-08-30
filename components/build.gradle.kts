@@ -26,17 +26,15 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17 // Usar a versão 17 pode ser mais seguro
+        sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = "17" // Ajuste para corresponder à compatibilidade Java
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(JavaVersion.VERSION_17.toString())
+        }
     }
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    kotlinOptions.jvmTarget = "17" // Ajuste para corresponder à compatibilidade Java
 }
 
 dependencies {
@@ -52,10 +50,11 @@ publishing {
             artifactId = "components"
             version = "0.0.1"
 
-            from(components["release"]) 
+            from(components.findByName("release") ?: components["java"])
+
             pom {
-                name.set("Easy UI")
-                description.set("A simple Library to help you with your Project's UI.")
+                name.set("Easy UI Components")
+                description.set("Some XML components to help you with development.")
                 url.set("https://github.com/trindadev13/easy-ui")
                 licenses {
                     license {
