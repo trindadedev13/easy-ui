@@ -72,7 +72,7 @@ dependencies {
 publishing {
     publications {
         register<MavenPublication>("release") {
-            groupId = "com.github.trindadedev"
+            groupId = "com.github.trindadedev13"
             artifactId = "components-compose"
             version = "1.0.0"
 
