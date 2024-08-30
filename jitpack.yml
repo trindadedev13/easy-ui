@@ -1,2 +1,1 @@
-jdk:
-  - openjdk11
+image: openjdk:17-jdk
