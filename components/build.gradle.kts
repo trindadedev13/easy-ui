@@ -2,13 +2,12 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("kotlin-parcelize")
-    id("com.google.devtools.ksp")
     id("maven-publish")
 }
 
 android {
     namespace = "dev.trindadedev.easyui.components"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 21
@@ -26,28 +25,28 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_18
-        targetCompatibility = JavaVersion.VERSION_18
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = "18"
+        jvmTarget = "17"
     }
 }
 
 dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("com.google.android.material:material:1.12.0")
+    implementation("com.google.android.material:material:1.13.0-alpha05")
     implementation("androidx.appcompat:appcompat:1.7.0")
 }
 
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {
-            groupId = "dev.trindadedev.easyui.components"
+            groupId = "com.github.trindadedev13"
             artifactId = "components"
-            version = "0.0.1"
-
+            version  = "0.0.1"
+            
             from(components.findByName("release"))
 
             pom {
