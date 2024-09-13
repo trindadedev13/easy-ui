@@ -18,5 +18,4 @@ rootProject.name = "easy-ui"
 
 // libs
 include(":components")
-include(":components-compose")
 include(":filepicker")
